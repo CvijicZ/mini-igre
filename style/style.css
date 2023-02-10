@@ -1,0 +1,14 @@
+.row{
+    justify-content: center;
+    align-items: center;
+    margin: 10vw auto;
+}
+.row .card{
+background-color: beige;
+}
+.navbar .navbar-nav .nav-item a{
+    padding: 10px;
+}
+.navbar .navbar-nav .nav-but{
+    padding: 5px;
+}
