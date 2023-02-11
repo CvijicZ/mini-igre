@@ -1,7 +1,16 @@
+body{
+    background-color: gainsboro;
+}
 .row{
     justify-content: center;
     align-items: center;
     margin: 10vw auto;
+    background-color: aqua;
+    width: 80%;
+    height: 90vh;
+}
+.navbar{
+    font-size: 22px;
 }
 .row .card{
 background-color: beige;
@@ -9,6 +18,23 @@ background-color: beige;
 .navbar .navbar-nav .nav-item a{
     padding: 10px;
 }
+.navbar .navbar-brand{
+    padding: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
 .navbar .navbar-nav .nav-but{
-    padding: 5px;
+    padding: 10px;
+    padding-right: 30px;
+}
+.navbar .navbar-nav .nav-but .btn{
+    border-color: rgb(181, 243, 12);
+    color: rgb(79, 247, 79);
+
+}
+header{
+    min-height: 300px;
+    background-size: cover;
+    background-image: url(../img/hero.png);
+
 }
