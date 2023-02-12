@@ -138,7 +138,7 @@ class RegistrujKorisnika extends ProveriKorisnika{
     $stmt->bindParam(":ime", $this->ime, PDO::PARAM_STR,20);
     $stmt->bindParam(":sifra", $this->sifra, PDO::PARAM_STR,50);
     if($stmt->execute()){
-        header("location: ../prijava.html");
+        header("location: ../regSucces.html");
         
     }
     else {

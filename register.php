@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Document</title>
 </head>
-<body class="bodyReg" onload="ScrollToTarget()">
+
 
   <?php include"header.php";?>
+
+  <body class="bodyReg" onload="ScrollToTarget()">
+  
+ 
 
   <section class="vh-100 bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
@@ -22,32 +26,45 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Napravi nalog</h2>
 
-              <form action="classes/register.php" method="post" id="form">
+              <form action="classes/register.php" onsubmit="return validateInputs()" method="post" id="form">
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="ime" name="ime" class="form-control form-control-lg" />
-                  <label class="form-label" for="ime">Ime</label>
+                
+                <div class="form-outline mb-4 input-control">
+                
+                <label class="form-label" for="ime">Ime</label>
+                  <input type="text" id="ime" name="ime" class="form-control form-control-lg" />               
+                  <div class="error"></div>
                 </div>
-
+               
+                
                 <div class="form-outline mb-4">
+                <div class="input-control">
+                <label class="form-label" for="mejl">E-mail</label>
                   <input type="text" id="mejl" name="mejl" class="form-control form-control-lg" />
-                  <label class="form-label" for="mejl">E-mail</label>
+                  <div class="error"></div>
+                  </div>
                 </div>
-
+                
                 <div class="form-outline mb-4">
+                <div class="input-control">
+                <label class="form-label" for="sifra">Šifra</label>
                   <input type="password" id="sifra" name="sifra" class="form-control form-control-lg" />
-                  <label class="form-label" for="sifra">Šifra</label>
+                  <div class="error"></div>
+                  </div>
                 </div>
-
+                
                 <div class="form-outline mb-4">
+                <div class="input-control">
+                <label class="form-label" for="sifra2">Ponovi šifru</label>
                   <input type="password" id="sifra2" name="sifra2" class="form-control form-control-lg" />
-                  <label class="form-label" for="sifra2">Ponovi šifru</label>
+                  <div class="error"></div>
+                  </div>
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" required />
                   <label class="form-check-label" for="form2Example3g">
-                    Prihvatam pravila korišćenja <a href="#!" class="text-body"><u class="pravilaK">Pravila korišćenja</u></a>
+                    Prihvatam pravila korišćenja <a href="" data-bs-toggle="modal" data-bs-target="uslovi" class="text-body"><u class="pravilaK">Pravila korišćenja</u></a>
                   </label>
                 </div>
 
@@ -60,6 +77,8 @@
                     class="fw-bold text-body"><u>Prijavi se</u></a></p>
 
               </form>
+             
+              
 
             </div>
           </div>
@@ -67,14 +86,18 @@
       </div>
     </div>
   </div>
+
 </section>
 
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="script/registerValidation.js"></script>
 <script>function ScrollToTarget()
   {
        document.getElementById("form").scrollIntoView(true);
        
   }</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
 </body>
 </html>
