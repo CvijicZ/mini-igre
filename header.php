@@ -21,7 +21,7 @@
                  <a class="nav-link" href="forum.php">Forum</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="#">Blog</a>
+                 <a class="nav-link" href="https://videoigrepsihologija3.wordpress.com" target="_blank" >Blog(WordPress)</a>
              </li>
             </ul>
             <ul class="navbar-nav ms-auto ">

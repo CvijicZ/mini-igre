@@ -25,6 +25,7 @@
     </nav>
 
     <div class="main">
+      <?php include"forum/ispis.php";?>
 
     </div>
     

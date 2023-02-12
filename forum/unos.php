@@ -6,6 +6,11 @@ if(isset($_POST['submit']) && isset($_SESSION['ime'])){
     $naslov=$_POST['naslov'];
     $sadrzaj=$_POST['sadrzaj'];
 
+    if(empty($naslov) || empty($sadrzaj)){
+        header("location: ../forum.php?error=PraznoPolje");
+        exit();
+    }
+
 
     $sql="INSERT INTO forum(naslov,sadrzaj) VALUES(:naslov,:sadrzaj)";
     $stmt=$dbh->prepare($sql);

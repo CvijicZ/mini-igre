@@ -22,7 +22,7 @@
             <div class="navbar-nav f ">
             <a class="nav-link" href="index.php">Pocetna </a>
               <a class="nav-link" href="forum.php">Nova tema</a>
-              <a class="nav-link" href="pitanja.html">Sva pitanja</a>
+              <a class="nav-link" href="pitanja.php">Sva pitanja</a>
               <a class="nav-link" href="#">Prijavi bug</a>
             </div>
           </div>      

@@ -124,6 +124,22 @@ header{
 }
 
 
+/* Forum */
+.main{
+    color: red;
+}
+.main h1{
+    color: #84fab0;
+}
+.objava{
+    display: flexbox;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(202, 194, 194);
+    width: 80vw;
+   margin: auto;
+}
+
 
 
 
