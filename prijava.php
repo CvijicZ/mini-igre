@@ -10,38 +10,7 @@
 </head>
 <body class="bodyReg" onload="ScrollToTarget()">
 
-    <header></header>
-  
-    <nav class="navbar fixed-top bg-transparent navbar-expand-lg navbar-dark bg-dark p-md3">
-        <a class="navbar-brand" href="#">MINI-IGRE</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto ">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Pocetna</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.html">Forum</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ms-auto ">
-                <li class="nav-but">
-                    <a class="btn btn-outline-light" href="#">Prijavi se</a>
-                </li>
-                <li class="nav-but">
-                    <a class="btn btn-outline-light" href="register.html">Registruj se</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
+<?php include"header.php";?>
 
     <section class="vh-100 bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
@@ -53,22 +22,23 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Prijava </h2>
 
-              <form action="classes/register.php" method="post" id="form">
+              <form action="classes/login.php" method="post" id="form">
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="ime" name="ime" class="form-control form-control-lg" />
                   <label class="form-label" for="ime">Ime ili e-mail</label>
+                  <input type="text" id="ime" name="ime" class="form-control form-control-lg" />
+                  
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="password" id="sifra" name="sifra" class="form-control form-control-lg" />
                   <label class="form-label" for="sifra">Šifra</label>
+                  <input type="password" id="sifra" name="sifra" class="form-control form-control-lg" />
+                  
                 </div>
                 <div class="d-flex justify-content-center">
-                  <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Prijavi se</button>
+                  <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Prijavi se</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Nemaš nalog? <a href="#!"
+                <p class="text-center text-muted mt-5 mb-0">Nemaš nalog? <a href="register.php"
                     class="fw-bold text-body"><u>Registruj se</u></a></p>
 
               </form>

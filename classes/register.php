@@ -45,33 +45,58 @@ class ProveriKorisnika{
         }
      } 
      public function FormatMejla(){
-        if(filter_var($this->mejl, FILTER_VALIDATE_EMAIL)){  //FILTER_VAR
+        if(filter_var($this->mejl, FILTER_VALIDATE_EMAIL)){  
             return true;
         }
         else {
             return false;
         }
      }
-    //  public function ZauzetoIme(){
-    //     include "mysqli.php";
-    //     $sqlI="SELECT ime FROM korisnik WHERE ime= ?"; // SELECT UPIT
-    //     $stmt=$mysqli->prepare($sqlI);
-    //     $stmt->bind_param("s", $this->ime);
-    //     $stmt->execute();
-    //     $stmt->store_result();
-    //     if($stmt->num_rows()>0){
-    //         return false;
-            
-    //         exit();
-    //     }
-    //     else {
-    //         return true;
-    //         $stmt=null;
-    //     }
-    //  }
+     public function FormatSifre(){
+        // Min 8 chars, upper, lowwer, number
+        $rgx="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/";
+        if(preg_match($rgx,$this->sifra)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+     }
+     public function ZauzetoIme(){
+        include "dbh.php";
+        $sql="SELECT ime FROM igrac WHERE ime= :ime"; 
+        $stmt=$dbh->prepare($sql);
+        $stmt->bindParam(":ime", $this->ime, PDO::PARAM_STR,20);
+        $stmt->execute();
+
+        if($stmt->rowCount()>0){
+            return false;      
+            exit();
+        }
+        else {
+            return true;
+            $stmt=null;
+        }
+     }
+     public function ZauzetEmail(){
+        include "dbh.php";
+        $sql="SELECT email FROM igrac WHERE email= :email"; 
+        $stmt=$dbh->prepare($sql);
+        $stmt->bindParam(":email", $this->mejl, PDO::PARAM_STR,320);
+        $stmt->execute();
+
+        if($stmt->rowCount()>0){
+            return false;      
+            exit();
+        }
+        else {
+            return true;
+            $stmt=null;
+        }
+     }
 
 }
-class RegistrujKorisnika extends ProveriKorisnika{  // DRUGA KLASA
+class RegistrujKorisnika extends ProveriKorisnika{  
     public function RegistracijaKorisnika(){
         
     if($this->PraznoPolje()==false)
@@ -81,7 +106,7 @@ class RegistrujKorisnika extends ProveriKorisnika{  // DRUGA KLASA
     }
     if($this->SifraGreska()==false)
     {
-        header("location: ../register.html?error=GreskaSifra");
+        header("location: ../register.html?error=LozinkeSeNePoklapaju");
         exit();
     }
     if($this->FormatIme()==false){
@@ -92,21 +117,33 @@ class RegistrujKorisnika extends ProveriKorisnika{  // DRUGA KLASA
         header ("location: ../register.html?error=FormatEmaila");
         exit();
     }
-    // if($this->ZauzetoIme()==false){
-    //     header("location: ../register.html?error=ZauzetoIme");
-    //     exit();
-    // }
+    if($this->FormatSifre()==false){
+        header ("location: ../register.html?error=FormatSifre");
+        exit();
+    }
+    if($this->ZauzetoIme()==false){
+        header("location: ../register.html?error=ZauzetoIme");
+        exit();
+    }
  
-    // include "mysqli.php";
-    // $sql="INSERT INTO korisnik(mejl,ime,sifra) VALUES(?,?,?)";  // INSERT UPIT
-    // $stmt=$mysqli->prepare($sql);
-    // $stmt->bind_param("ssss",$this->mejl,$this->ime,$this->sifra);
-    // if($stmt->execute()){
-    //     echo "Uspesno uneto";
-    // }
-    // else {
-    //     echo "Neuspesan query";
-    // }
+    if($this->ZauzetEmail()==false){
+        header("location: ../register.html?error=ZauzetMejl");
+        exit();
+    }
+
+    include "dbh.php";
+    $sql="INSERT INTO igrac(email,ime,sifra) VALUES(:mejl,:ime,:sifra)";  // INSERT UPIT
+    $stmt=$dbh->prepare($sql);
+    $stmt->bindParam(":mejl", $this->mejl, PDO::PARAM_STR,320);
+    $stmt->bindParam(":ime", $this->ime, PDO::PARAM_STR,20);
+    $stmt->bindParam(":sifra", $this->sifra, PDO::PARAM_STR,50);
+    if($stmt->execute()){
+        header("location: ../prijava.html");
+        
+    }
+    else {
+        echo "Neuspesan query";
+    }
  
 }
 }
