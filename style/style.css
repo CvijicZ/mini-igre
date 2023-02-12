@@ -50,7 +50,9 @@ header{
     background-image: url(../img/hero.png);
 
 }
-
+.noviPost{
+    margin-top: -20%;
+}
 .indexBody {
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;

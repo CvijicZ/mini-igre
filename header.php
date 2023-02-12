@@ -4,19 +4,21 @@
  <header></header>
  
             <?php if(isset($_SESSION['ime'])){ ?>
+                
 
         <nav class="navbar fixed-top bg-transparent navbar-expand-lg navbar-dark bg-dark p-md3">
              <a class="navbar-brand" href="#">MINI-IGRE</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
      </button>
+     
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav ms-auto ">
                 <li class="nav-item">
                  <a class="nav-link" href="index.php">Pocetna</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="register.php">Forum</a>
+                 <a class="nav-link" href="forum.php">Forum</a>
              </li>
              <li class="nav-item">
                  <a class="nav-link" href="#">Blog</a>
@@ -32,8 +34,10 @@
          </ul>
             </div>
             </nav>
+            
                 <?php } 
                 else { ?>
+           
          <nav class="navbar fixed-top bg-transparent navbar-expand-lg navbar-dark bg-dark p-md3">
          <a class="navbar-brand" href="#">MINI-IGRE</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -46,7 +50,7 @@
                  <a class="nav-link" href="index.php">Pocetna</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="register.php">Forum</a>
+                 <a class="nav-link" href="forum.php">Forum</a>
              </li>
              <li class="nav-item">
                  <a class="nav-link" href="#">Blog</a>
@@ -62,6 +66,7 @@
          </ul>
      </div>
  </nav>
+                
 <?php
 } 
 ?>
