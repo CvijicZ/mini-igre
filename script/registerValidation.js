@@ -33,6 +33,25 @@ const setSucces = element=>{
     inputControl.classList.add('succes');
     inputControl.classList.remove('error');
 };
+
+
+const proveriDostupnost=()=>{
+    const key=window.location.search;
+    const urlParams=new URLSearchParams(key);
+    const param=urlParams.get('error');
+    if(param=="ZauzetoIme")
+    {
+        setError(ime,'Korisnicko ime je zauzeto!');
+        
+    }
+    else if(param=="ZauzetMejl")
+    {
+        setError(mejl,'Vec ste registrovani sa ovim e-mailom!');
+      
+    }
+    
+
+}
 const validateInputs = () => {
     const imeV = ime.value.trim();
     const mejlV= mejl.value.trim();
@@ -97,10 +116,5 @@ const validateInputs = () => {
     else{
         setSucces(sifra2);
     }
-     
-    
-
-    
-
 };
 

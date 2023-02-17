@@ -101,24 +101,24 @@ class RegistrujKorisnika extends ProveriKorisnika{
         
     if($this->PraznoPolje()==false)
     {
-        header("location: ../register.html?error=PraznoPolje");
+        header("location: ../register.php?error=PraznoPolje");
         exit();
     }
     if($this->SifraGreska()==false)
     {
-        header("location: ../register.html?error=LozinkeSeNePoklapaju");
+        header("location: ../register.php?error=LozinkeSeNePoklapaju");
         exit();
     }
     if($this->FormatIme()==false){
-        header("location: ../register.html?error=FormatImena");
+        header("location: ../register.php?error=FormatImena");
         exit();
     }
     if($this->FormatMejla()==false){
-        header ("location: ../register.html?error=FormatEmaila");
+        header ("location: ../register.php?error=FormatEmaila");
         exit();
     }
     if($this->FormatSifre()==false){
-        header ("location: ../register.html?error=FormatSifre");
+        header ("location: ../register.php?error=FormatSifre");
         exit();
     }
     if($this->ZauzetoIme()==false){
@@ -127,7 +127,7 @@ class RegistrujKorisnika extends ProveriKorisnika{
     }
  
     if($this->ZauzetEmail()==false){
-        header("location: ../register.html?error=ZauzetMejl");
+        header("location: ../register.php?error=ZauzetMejl");
         exit();
     }
 
