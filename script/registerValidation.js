@@ -5,13 +5,6 @@ const mejl=document.getElementById('mejl');
 const sifra=document.getElementById('sifra');
 const sifra2=document.getElementById('sifra2');
 
-// form.addEventListener('submit', e => {
-//     e.preventDefault();
-    
-//     validateInputs();
-   
-// });
-
 const isValidEmail=mejl=>{
     const rgx=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return rgx.test(String(mejl).toLowerCase());
@@ -20,7 +13,10 @@ const isValidPassword=sifra=>{
     const rgx=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     return rgx.test(String(sifra));
 }
-
+const isValidName=ime=>{
+    const rgx=/^([a-zA-Z0-9]+)$/
+    return rgx.test(String(ime));
+}
 const setError=(element, message)=>{
     const inputControl=element.parentElement;
     const errorDisplay=inputControl.querySelector('.error');
@@ -48,10 +44,16 @@ const validateInputs = () => {
         setError(ime,"Korisnicko ime je obavezno!");
         return false;
     }
+    else if(!isValidName(imeV)){
+        setError(ime,'Ime moze da sadrzi samo slova i brojeve!');
+        return false;
+    }
     else
     {
         setSucces(ime);
     }
+
+
     if(mejlV==='')
     {
         setError(mejl,'E-mail je obavezan!');

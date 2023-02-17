@@ -122,7 +122,7 @@ class RegistrujKorisnika extends ProveriKorisnika{
         exit();
     }
     if($this->ZauzetoIme()==false){
-        header("location: ../register.html?error=ZauzetoIme");
+        header("location: ../register.php?error=ZauzetoIme");
         exit();
     }
  
