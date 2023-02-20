@@ -49,10 +49,29 @@ const proveriDostupnost=()=>{
         setError(mejl,'Vec ste registrovani sa ovim e-mailom!');
       
     }
+  
     
 
 }
-const validateInputs = () => {
+const proveriPrijavu=()=>{
+    const imeV = ime.value.trim();
+    const sifraV= sifra.value.trim();
+    if(imeV==''){
+        setError(ime,"Unesite ime ili e-mail!");
+        return false;
+    }
+    else{
+        setSucces(ime);
+    }
+    
+     if(sifraV==''){
+        setError(sifra,"Ovo polje je obavezno!");
+        return false;
+    }
+
+
+}
+const proveriRegistraciju = () => {
     const imeV = ime.value.trim();
     const mejlV= mejl.value.trim();
     const sifraV= sifra.value.trim();

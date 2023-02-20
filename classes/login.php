@@ -28,5 +28,7 @@ if(isset($_POST['submit'])){
     session_start();
     $_SESSION['ime']=$korisnik[0]['ime'];
     $_SESSION['mejl']=$korisnik[0]['mejl'];
+    $_SESSION['id']=$korisnik[0]['id'];
+    
     header("location: ../index.php");
 }

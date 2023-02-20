@@ -22,18 +22,24 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Prijava </h2>
 
-              <form action="classes/login.php" method="post" id="form">
+              <form action="classes/login.php" method="post" id="form" onsubmit="return proveriPrijavu()">
 
                 <div class="form-outline mb-4">
+                  <div class="input-control">
                   <label class="form-label" for="ime">Ime ili e-mail</label>
                   <input type="text" id="ime" name="ime" class="form-control form-control-lg" />
-                  
+                  <div class="error"></div>
+                  </div>            
                 </div>
+
                 <div class="form-outline mb-4">
+                  <div class="input-control">
                   <label class="form-label" for="sifra">Šifra</label>
                   <input type="password" id="sifra" name="sifra" class="form-control form-control-lg" />
-                  
+                  <div class="error"></div>
+                  </div>    
                 </div>
+                
                 <div class="d-flex justify-content-center">
                   <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Prijavi se</button>
                 </div>
@@ -53,7 +59,7 @@
 
     
 
-
+<script src="script/registerValidation.js"></script>
 <script>function ScrollToTarget()
     {
          document.getElementById("form").scrollIntoView(true);

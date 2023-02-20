@@ -45,7 +45,7 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Napravi nalog</h2>
 
-              <form action="classes/register.php" onsubmit="return validateInputs()" method="post" id="form">
+              <form action="classes/register.php" onkeyup="return proveriRegistraciju()" method="post" id="form">
 
                 
                 <div class="form-outline mb-4 input-control">

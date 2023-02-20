@@ -19,7 +19,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="navbar-nav f ">
+            <div class="navbar-nav f text-center ">
             <a class="nav-link" href="index.php">Pocetna </a>
               <a class="nav-link" href="forum.php">Nova tema</a>
               <a class="nav-link" href="pitanja.php">Sva pitanja</a>
