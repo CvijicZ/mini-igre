@@ -50,23 +50,39 @@ const proveriDostupnost=()=>{
       
     }
   
+}
+const proveriKorisnika=()=>{
+    const key=window.location.search;
+    const urlParams=new URLSearchParams(key);
+    const param=urlParams.get('error');
+    if(param=="KorisnikNijePronadjen"){
+        setError(ime,"Korisnik nije pronadjen");
+        return false;
+    }
+    else if(param=="PogresnaSifra"){
+        setError(sifra,"Pogresna lozinka");
+        return false;
+    }
     
-
 }
 const proveriPrijavu=()=>{
     const imeV = ime.value.trim();
     const sifraV= sifra.value.trim();
+   
     if(imeV==''){
         setError(ime,"Unesite ime ili e-mail!");
         return false;
     }
     else{
         setSucces(ime);
-    }
-    
+        
+    }   
      if(sifraV==''){
         setError(sifra,"Ovo polje je obavezno!");
         return false;
+    }
+    else {
+        setSucces(sifra);
     }
 
 

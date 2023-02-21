@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Prijavi se|Mini-Igre</title>
 </head>
-<body class="bodyReg" onload="ScrollToTarget()">
+<body class="bodyReg" onload="ScrollToTarget(); proveriKorisnika();">
 
 <?php include"header.php";?>
 

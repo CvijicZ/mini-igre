@@ -28,6 +28,11 @@
                              <li class="nav-item">
                                  <a class="nav-link" href="#"><?php echo $_SESSION['ime']; ?></a>
                              </li>
+                             <?php if($_SESSION['admin']==true){?>
+                             <li class="nav-item">                             
+                                <a href="admin.php" target="_blank" class="nav-link">Admin-Panel</a>
+                             </li>
+                             <?php } ?>
                              <li class="nav-but">
                              <a class="btn btn-outline-light" href="classes/logout.php">Odjavi se</a>
                             </li>
