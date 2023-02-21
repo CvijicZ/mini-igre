@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 
  <header>
  <?php if(isset($_SESSION['ime'])){ ?>
@@ -30,7 +28,7 @@
                              </li>
                              <?php if($_SESSION['admin']==true){?>
                              <li class="nav-item">                             
-                                <a href="admin.php" target="_blank" class="nav-link">Admin-Panel</a>
+                                <a href="adminLoginPage.php" target="_blank" class="nav-link">Admin-Panel</a>
                              </li>
                              <?php } ?>
                              <li class="nav-but">
