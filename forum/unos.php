@@ -12,14 +12,18 @@ if(isset($_POST['submit']) && isset($_SESSION['ime'])){
     }
 
 
-    $sql="INSERT INTO forum(naslov,sadrzaj,idAutora) VALUES(:naslov,:sadrzaj,:idAutora)";
+    $sql="INSERT INTO forum(naslov,sadrzaj,idAutora,vremeObjave) VALUES(:naslov,:sadrzaj,:idAutora,:vremeObjave)";
     $stmt=$dbh->prepare($sql);
     $stmt->bindParam(":naslov",$naslov);
     $stmt->bindParam(":sadrzaj",$sadrzaj);
     $stmt->bindParam(":idAutora",$id);
+    $stmt->bindParam(":vremeObjave",$vreme);
     $id=$_SESSION['id'];
+    $vreme=date('Y-m-d H:i:s');
+    
     if($stmt->execute()){
         echo "Uspesno uneto";
+        echo $vreme;
     }
     else {
         echo "neuspesno";
