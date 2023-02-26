@@ -27,8 +27,7 @@
 
     <div class="main">
       <?php include"forum/ispis.php";
-      $i=new ispis();
-      $i->ispis();
+      
       ?>
 
     </div>

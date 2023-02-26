@@ -6,7 +6,7 @@ class ispis{
     public function ispis(){
     include "classes/dbh.php";
     
-    $sql="SELECT * FROM forum";
+    $sql="SELECT * FROM forum ORDER BY vremeObjave DESC";
     $stmt=$dbh->prepare($sql);
     $stmt->execute();
     global $idAutora;
@@ -49,3 +49,5 @@ foreach($stmt as $row){
 
 
 }
+$i=new ispis();
+      $i->ispis();
