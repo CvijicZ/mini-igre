@@ -12,11 +12,11 @@ if(isset($_POST['submit']) && isset($_SESSION['ime'])){
     }
 
 
-    $sql="INSERT INTO forum(naslov,sadrzaj,id) VALUES(:naslov,:sadrzaj,:id)";
+    $sql="INSERT INTO forum(naslov,sadrzaj,idAutora) VALUES(:naslov,:sadrzaj,:idAutora)";
     $stmt=$dbh->prepare($sql);
     $stmt->bindParam(":naslov",$naslov);
     $stmt->bindParam(":sadrzaj",$sadrzaj);
-    $stmt->bindParam(":id",$id);
+    $stmt->bindParam(":idAutora",$id);
     $id=$_SESSION['id'];
     if($stmt->execute()){
         echo "Uspesno uneto";

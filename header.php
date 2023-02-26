@@ -16,7 +16,7 @@
                                  <a class="nav-link" href="index.php">Pocetna</a>
                              </li>
                              <li class="nav-item">
-                                 <a class="nav-link" href="forum.php">Forum</a>
+                                 <a class="nav-link" href="sveTeme.php">Forum</a>
                              </li>
                              <li class="nav-item">
                                  <a class="nav-link" href="https://videoigrepsihologija3.wordpress.com" target="_blank" >Blog(WordPress)</a>
@@ -55,7 +55,7 @@
                                  <a class="nav-link" href="index.php">Pocetna</a>
                              </li>
                              <li class="nav-item">
-                                 <a class="nav-link" href="forum.php">Forum</a>
+                                 <a class="nav-link" href="sveTeme.php">Forum</a>
                              </li>
                              <li class="nav-item">
                                  <a class="nav-link" href="#">Blog</a>

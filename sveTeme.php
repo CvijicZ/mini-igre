@@ -17,15 +17,19 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
           <div class="navbar-nav f ">
-            <a class="nav-link" href="forum.php">Nova tema</a>
-            <a class="nav-link" href="pitanja.html">Sva pitanja</a>
+          <a class="nav-link" href="index.php">Pocetna</a>
+            <a class="nav-link" href="novaTema.php">Nova tema</a>
+            <a class="nav-link" href="sveTeme.php">Sva pitanja</a>
             <a class="nav-link" href="#">Prijavi bug</a>
           </div>
         </div>      
     </nav>
 
     <div class="main">
-      <?php include"forum/ispis.php";?>
+      <?php include"forum/ispis.php";
+      $i=new ispis();
+      $i->ispis();
+      ?>
 
     </div>
     
