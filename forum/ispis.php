@@ -4,7 +4,7 @@
 class ispis{
     
     public function ispis(){
-    include "classes/dbh.php";
+    include "../classes/dbh.php";
     
     $sql="SELECT * FROM forum ORDER BY vremeObjave DESC";
     $stmt=$dbh->prepare($sql);
@@ -22,7 +22,7 @@ foreach($stmt as $row){
 }
     }
     private function dajIme(){
-        include "classes/dbh.php";
+        include "../classes/dbh.php";
        global $idAutora;
         $sql="SELECT ime FROM igrac WHERE id=:idAutora";
         $stmt=$dbh->prepare($sql);
@@ -34,7 +34,7 @@ foreach($stmt as $row){
         
     }
     private function dajVreme(){
-        include "classes/dbh.php";
+        include "../classes/dbh.php";
         global $idVesti;
         $sql="SELECT vremeObjave FROM forum WHERE idObjave=:idObjave";
         $stmt=$dbh->prepare($sql);

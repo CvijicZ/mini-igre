@@ -22,7 +22,7 @@ if(isset($_POST['submit']) && isset($_SESSION['ime'])){
     $vreme=date('Y-m-d H:i:s');
     
     if($stmt->execute()){
-        header("location: ../sveTeme.php");
+        header("location: sveTeme.php");
     }
     else {
         echo "neuspesno";

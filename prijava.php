@@ -10,7 +10,7 @@
 </head>
 <body class="bodyReg" onload="ScrollToTarget(); proveriKorisnika();">
 
-<?php include"header.php";?>
+<?php include"includes/header.inc.php";?>
 
     <section class="vh-100 bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">

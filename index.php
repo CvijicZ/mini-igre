@@ -13,7 +13,7 @@
 <body class="indexBody">
    
 
-    <?php include"header.php";?>
+    <?php include"includes/header.inc.php";?>
     <div class="row igre">
         <div class="card" style="width: 18rem;">
             <div class="card-body">

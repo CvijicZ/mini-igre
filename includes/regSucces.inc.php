@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="../style/style.css">
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <?php include"header.inc.php";?>
+    <!-- <header></header>
     <nav class="navbar fixed-top bg-transparent navbar-expand-lg navbar-dark bg-dark p-md3">
         <a class="navbar-brand" href="#">MINI-IGRE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -39,11 +40,11 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
     <div class="regSus text-center">
         <h2>Registracija uspesna!</h2>
         <p>Prijavite se da biste nastavili!</p>
-        <a href="prijava.php"><button type="button" class="btn btn-success">Prijavi se</button></a>
+        <a href="../prijava.php"><button type="button" class="btn btn-success">Prijavi se</button></a>
     </div>
 
 

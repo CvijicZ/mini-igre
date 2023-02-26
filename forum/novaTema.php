@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <title>Forum</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
           </button>
           <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
             <div class="navbar-nav f text-center ">
-            <a class="nav-link" href="index.php">Pocetna </a>
+            <a class="nav-link" href="../index.php">Pocetna </a>
               <a class="nav-link" href="novaTema.php">Nova tema</a>
               <a class="nav-link" href="sveTeme.php">Sva pitanja</a>
               <a class="nav-link" href="#">Prijavi bug</a>
@@ -39,7 +39,7 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Nova tema</h2>
 
-              <form action="forum/unos.php" method="post" id="form">
+              <form action="unos.php" method="post" id="form">
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="naslov">Naslov</label>
