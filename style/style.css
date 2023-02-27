@@ -144,19 +144,40 @@ header{
 
 /* Forum */
 .main{
-    color: red;
+    
+    background-image: linear-gradient(black,gray);
+    color: black;
+    padding-top: 20px;
+   
 }
-.main h1{
-    color: #84fab0;
-}
+
+
 .objava{
     display: flexbox;
     justify-content: center;
     text-align: center;
     background-color: rgb(202, 194, 194);
-    width: 80vw;
+    width: 50vw;   
+    height:10%;
    margin: auto;
 }
+.main .naslov{
+    text-align: center;
+    color: blue;
+      
+}
+.main .vreme{
+    text-align: right;
+  
+   
+}
+.main .ime{
+    
+text-align: left;
+ 
+    
+}
+
 
 
 

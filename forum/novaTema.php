@@ -38,8 +38,8 @@
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Nova tema</h2>
-
-              <form action="unos.php" method="post" id="form">
+              <?php if(isset($_SESSION['ime'])){?>
+                <form action="unos.php" method="post" id="form">
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="naslov">Naslov</label>
@@ -50,12 +50,7 @@
                   <label class="form-label" for="sadrzaj">Sadrzaj</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="sadrzaj"></textarea>
                   
-                </div>
-                <div class="form-outline mb-4">
-                <small>*Morate biti prijavljeni da biste mogli da objavite post!</small>
-                  
-                </div>
-                
+                </div>             
                 <div class="d-flex justify-content-center">
                   <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Objavi</button>
                 </div>
@@ -64,6 +59,19 @@
 
               </form>
 
+             <?php } else {?>
+              <div class="text-center">
+              <h2>Morate biti prijavljeni da biste mogli da objavite post!</h2>
+              <a class="btn btn-primary" href="/mini-igre/prijava.php">Prijavi se</a>
+              <p>Nemate nalog? Napravite ga ovde: <a href="/mini-igre/register.php">Napravi nalog</a></p>
+
+              </div>
+              
+
+
+            <?php } ?>
+
+              
             </div>
           </div>
         </div>

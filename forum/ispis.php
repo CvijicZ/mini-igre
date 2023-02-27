@@ -15,7 +15,8 @@ class ispis{
 foreach($stmt as $row){
     $idAutora=$row['idAutora']; 
     $idVesti=$row['idObjave'];
-    echo "<div class='objava'>" . "<h1>" . $row['naslov'] ."</h1>" ."<br>" . "Sadrzaj: " . $row['sadrzaj'] . "<br>" . "Autor:".  ispis::dajIme(). "<br>" . "Vreme: " . ispis::dajVreme() .  "</div>" . '<br>';
+    echo "<div class='objava'>". "<p class='ime'>Objavio: " .  ispis::dajIme(). "</p>" . 
+    "<h4 class='naslov'>"  . $row['naslov'] ."</h4>"   . "<p class='vreme'>" . ispis::dajVreme() ."</p>".  "</div>";
     
  
     
