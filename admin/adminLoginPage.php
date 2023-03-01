@@ -14,7 +14,7 @@
       <title>Admin</title>
   </head>
   <body>
-      <?php include"header.php" ?>
+      <?php include"/mini-igre/includes/header.inc.php"; ?>
       <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -22,7 +22,7 @@
             <div class="card" style="border-radius: 15px;">
               <div class="card-body p-5">
                 <h2 class="text-uppercase text-center mb-5">Admin Prijava </h2>
-                <form action="classes/AdminLogin.php" method="post" id="form" onsubmit="return proveriPrijavu()">
+                <form action="/mini-igre/classes/AdminLogin.php" method="post" id="form" onsubmit="return proveriPrijavu()">
                   <div class="form-outline mb-4">
                     <div class="input-control">
                     <label class="form-label" for="ime">Ime</label>

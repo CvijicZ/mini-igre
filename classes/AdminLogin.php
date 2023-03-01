@@ -27,5 +27,5 @@ if(isset($_POST['submit'])){
     session_start();
     $_SESSION['ime']=$korisnik[0]['ime'];   
     $_SESSION['adminId']=$korisnik[0]['id'];
-    header("location: ../adminPanel.php");
+    header("location: /mini-igre/admin/adminPanel.php");
 }

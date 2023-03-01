@@ -32,7 +32,7 @@
           <a class="nav-link" href="forum.php">Forum</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="classes/logout.php">Odjavi se</a>
+          <a class="nav-link" href="/mini-igre/classes/logout.php">Odjavi se</a>
         </li>
       </ul>
     </div>
