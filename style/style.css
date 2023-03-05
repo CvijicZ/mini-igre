@@ -143,11 +143,16 @@ header{
 
 
 /* Forum */
+.sveTemeBody{
+    background-image: linear-gradient(black,gray);
+
+}
 .main{
     
-    background-image: linear-gradient(black,gray);
+    
     color: black;
     padding-top: 20px;
+   
    
 }
 

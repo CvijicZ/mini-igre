@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../style/style.css">
     <title>Pitanja</title>
 </head>
-<body>
+<body class="sveTemeBody">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand " href="#">Forum</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

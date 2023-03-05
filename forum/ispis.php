@@ -10,13 +10,13 @@ class ispis{
     $stmt=$dbh->prepare($sql);
     $stmt->execute();
     global $idAutora;
-    global $idVesti;
+    global $idObjave;
  
 foreach($stmt as $row){
     $idAutora=$row['idAutora']; 
-    $idVesti=$row['idObjave'];
+    $idObjave=$row['idObjave'];
     echo "<div class='objava'>". "<p class='ime'>Objavio: " .  ispis::dajIme(). "</p>" . 
-    "<h4 class='naslov'>"  . $row['naslov'] ."</h4>"   . "<p class='vreme'>" . ispis::dajVreme() ."</p>".  "</div>";
+    "<h4 class='naslov'>"  . $row['naslov'] ."</h4>" .$row['sadrzaj']  . "<p class='vreme'>" . ispis::dajVreme() ."</p>".  "</div>";
     
  
     
@@ -36,11 +36,11 @@ foreach($stmt as $row){
     }
     private function dajVreme(){
         include "../classes/dbh.php";
-        global $idVesti;
+        global $idObjave;
         $sql="SELECT vremeObjave FROM forum WHERE idObjave=:idObjave";
         $stmt=$dbh->prepare($sql);
         $stmt->bindParam(":idObjave",$id);
-        $id=$idVesti;
+        $id=$idObjave;
         $stmt->execute();
         $result=$stmt->fetchAll();
         $timestamp=$result[0]['vremeObjave'];
