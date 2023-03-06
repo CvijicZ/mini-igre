@@ -145,6 +145,7 @@ header{
 /* Forum */
 .sveTemeBody{
     background-image: linear-gradient(black,gray);
+    height: 100vh;
 
 }
 .main{
