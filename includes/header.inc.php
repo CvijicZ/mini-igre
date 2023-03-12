@@ -23,12 +23,12 @@
                              </li>
                             </ul>
                             <ul class="navbar-nav ms-auto ">
-                             <li class="nav-item">
-                                 <a class="nav-link" href="/mini-igre/izmenaNaloga.php"><?php echo $_SESSION['ime']; ?></a>
+                             <li class="nav-but">
+                                 <a class="btn btn-outline-light" href="/mini-igre/izmenaNaloga.php"><?php echo $_SESSION['ime']; ?></a>
                              </li>
                              <?php if($_SESSION['admin']==true){?>
-                             <li class="nav-item">                             
-                                <a href="/mini-igre/admin/adminLoginPage.php" target="_blank" class="nav-link">Admin-Panel</a>
+                             <li class="nav-but">                             
+                                <a href="/mini-igre/admin/adminLoginPage.php" target="_blank" class="btn btn-outline-light">Admin-Panel</a>
                              </li>
                              <?php } ?>
                              <li class="nav-but">

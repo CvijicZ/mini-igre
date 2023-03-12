@@ -4,6 +4,7 @@ const ime=document.getElementById('ime');
 const mejl=document.getElementById('mejl');
 const sifra=document.getElementById('sifra');
 const sifra2=document.getElementById('sifra2');
+const staraSifra=document.getElementById('staraSifra');
 
 const isValidEmail=mejl=>{
     const rgx=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -64,6 +65,57 @@ const proveriKorisnika=()=>{
         return false;
     }
     
+}
+const proveriIzmenuIme=()=>{
+    const imeV=ime.value.trim();
+    if(imeV==''){
+        setError(ime,"Ime ne moze biti prazno!");
+        return false;
+    }
+    else if(!isValidName(imeV)){
+        setError(ime,"Ime moze da sadrzi samo slova i brojeve!");
+        return false;
+    }
+    else {
+        setSucces(ime);
+      
+    }
+    
+}
+const proveriIzmenuSifra=()=>{
+    const sifraV=sifra.value.trim();
+    const sifraV2=sifra2.value.trim();
+    const staraSifraV=staraSifra.value.trim();
+
+if(staraSifraV===''){
+    setError(staraSifra,"Ovo polje je obavezno!");
+    return false;
+}
+else {
+    setSucces(staraSifra);
+}
+    if(sifraV==='')
+    {
+        setError(sifra,'Sifra je obavezna!');
+        return false;
+    }
+    else if(!isValidPassword(sifraV)){
+        setError(sifra,'Sifra mora da sadrzi 8 karaktera minimalno, veliko, malo slovo i broj!');
+        return false;
+    }
+    else
+    {
+        setSucces(sifra);
+    }
+
+   if(sifraV!==sifraV2){
+        setError(sifra2,"Lozinke se ne poklapaju!");
+        return false;
+    }
+    else {
+        setSucces(sifra2);
+    }
+  
 }
 const proveriPrijavu=()=>{
     const imeV = ime.value.trim();

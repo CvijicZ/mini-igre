@@ -27,17 +27,13 @@ if(!isset($_SESSION['id'])){
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>       
-            <p>Da biste obrisali Vas nalog, potrebno je da unesete Vasu sifru i pritisnete dugme "Obrisi nalog"</p>
-            <label for="sifra">Unesite Vasu sifru</label>
-            <input type="password" name="sifra" placeholder="Unesite sifru" />
-        </form>
-       
+        <form action="/mini-igre/classes/obrisiNalog.php" method="POST">       
+            <p>Brisanje naloga je trajno! Ukoliko pritisnete na dugme "Obrisi nalog" vise necete moci da opozovete ovu promenu!</p> 
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-danger">Obrisi nalog</button>
+      <button type="submit" name="action" value="obrisiNalog" class="btn btn-danger">Obrisi nalog</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
-        
+        </form>
       </div>
     </div>
   </div>
@@ -52,7 +48,7 @@ if(!isset($_SESSION['id'])){
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Izmeni nalog</h2>
 
-              <form action="" method="post" id="form">
+              <form action="/mini-igre/classes/izmenaNaloga.class.php" method="post" id="form" onsubmit="return proveriIzmenuIme()" onkeyup="return proveriIzmenuIme()">
                  <hr>
                 <div class="form-outline mb-4">
                   <div class="input-control">
@@ -62,26 +58,36 @@ if(!isset($_SESSION['id'])){
                   <div class="error"></div>
                   </div> <br> 
                   <div class="d-flex justify-content-center">
-                  <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Potvrdi</button>
+                  <button type="submit" name="action" value="promeniIme" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Potvrdi</button>
                 </div>
                 </div>
+</form>
                 <hr>
 
+                <form action="/mini-igre/classes/izmenaNaloga.class.php" method="post"  onsubmit="return proveriIzmenuSifra()" onkeyup="return proveriIzmenuSifra()">
                 <div class="form-outline mb-4">
-                  <div class="input-control">
+                 
                     <h3>Promeni sifru</h3>
-                  <label class="form-label" for="sifra">Stara sifra</label>
-                  <input type="password" id="sifra" name="sifra" class="form-control form-control-lg" placeholder="Unesi staru sifru" />
-                  <label class="form-label" for="sifra2">Nova sifra</label>
-                  <input type="password" id="sifra" name="sifra2" class="form-control form-control-lg" placeholder="Unesi novu sifru"/>
-                  <label class="form-label" for="sifra3">Ponovite novu sifru</label>
-                  <input type="password" id="sifra" name="sifra2" class="form-control form-control-lg" placeholder="Ponovi novu sifru"/>
+                    <div class="input-control">
+                  <label class="form-label" for="staraSifra">Stara sifra</label>
+                  <input type="password" id="staraSifra" name="staraSifra" class="form-control form-control-lg" placeholder="Unesi staru sifru" />
                   <div class="error"></div><br>
+                  </div>
+                  <div class="input-control">
+                  <label class="form-label" for="sifra">Nova sifra</label>
+                  <input type="password" id="sifra" name="sifra" class="form-control form-control-lg" placeholder="Unesi novu sifru"/>
+                  <div class="error"></div><br>
+                  </div>
+                  <div class="input-control">
+                  <label class="form-label" for="sifra2">Ponovite novu sifru</label>
+                  <input type="password" id="sifra2" name="sifra2" class="form-control form-control-lg" placeholder="Ponovi novu sifru"/>
+                  <div class="error"></div><br>
+                  </div> 
                   <div class="d-flex justify-content-center">
-                  <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Potvrdi</button>
+                  <button type="submit" name="action" value="promeniSifru" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Potvrdi</button>
                 </div>
                  
-                  </div>    
+                     
                 </div>
                 <hr>
                 </form>
@@ -110,5 +116,6 @@ if(!isset($_SESSION['id'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+        <script src="/mini-igre/script/registerValidation.js"></script>
 </body>
 </html>
