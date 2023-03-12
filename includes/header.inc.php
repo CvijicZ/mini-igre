@@ -4,7 +4,7 @@
                 
                 <div class="row">
                 
-                <nav class="navbar fixed-top bg-transparent navbar-expand-lg navbar-dark bg-dark p-md3">
+                <nav class="navbar sticky-top bg-transparent navbar-expand-lg navbar-dark bg-dark p-md3">
                              <a class="navbar-brand" href="#">MINI-IGRE</a>
                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
                             </ul>
                             <ul class="navbar-nav ms-auto ">
                              <li class="nav-item">
-                                 <a class="nav-link" href="#"><?php echo $_SESSION['ime']; ?></a>
+                                 <a class="nav-link" href="/mini-igre/izmenaNaloga.php"><?php echo $_SESSION['ime']; ?></a>
                              </li>
                              <?php if($_SESSION['admin']==true){?>
                              <li class="nav-item">                             
