@@ -14,7 +14,7 @@ if(!isset($_SESSION['id'])){
     <link rel="stylesheet" href="style/style.css">
     <title>Izmena Naloga|Mini-Igre</title>
 </head>
-<body  onload="proveriDostupnost()">
+<body  onload="proveriDostupnost(); proveriKorisnika2();">
     <?php include "includes/header.inc.php";?>  
 
 

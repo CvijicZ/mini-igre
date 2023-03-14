@@ -43,7 +43,45 @@ session_start();
       
     }
     else if ($_POST['action'] == 'promeniSifru'){
-        echo "Stisnuo si promeni sifru";
+        include "dbh.php";
+        try{
+            $dbh->beginTransaction();
+
+            $sifra=$_POST['staraSifra'];
+            $novaSifra=$_POST['sifra'];
+
+            
+            $sql="SELECT sifra FROM igrac WHERE ime=:ime";
+            
+            $stmt=$dbh->prepare($sql);
+            $stmt->bindparam(":ime",$ime);
+            $ime=$_SESSION['ime'];
+            $stmt->execute();
+            $sif=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            if($sifra!==$sif[0]['sifra']){
+                header("location: /mini-igre/izmenaNaloga.php?error=PogresnaSifra");
+                $stmt=null;
+                exit();
+            }
+            else {
+                $stmt->closeCursor();
+                $sql="UPDATE igrac SET sifra=:sifra WHERE ime=:ime";
+                $stmt=$dbh->prepare($sql);
+                $stmt->bindParam(":sifra",$novaSifra);
+                $stmt->bindParam(":ime",$ime);
+                $stmt->execute();
+                $dbh->commit();
+                header("location: /mini-igre/izmenaNaloga.php?error=UspesnoPromenjenaSifra");
+                exit();
+            }
+
+        }
+        catch(PDOException $e){
+            $dbh->rollBack();
+            echo $e->getMessage();
+            $dbh=null;
+            
+        }   
     }
     
     

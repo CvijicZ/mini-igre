@@ -66,6 +66,17 @@ const proveriKorisnika=()=>{
     }
     
 }
+const proveriKorisnika2=()=>{
+    const key=window.location.search;
+    const urlParams=new URLSearchParams(key);
+    const param=urlParams.get('error');
+ 
+     if(param=="PogresnaSifra"){
+        setError(staraSifra,"Pogresna lozinka");
+        return false;
+    }
+    
+}
 const proveriIzmenuIme=()=>{
     const imeV=ime.value.trim();
     if(imeV==''){
