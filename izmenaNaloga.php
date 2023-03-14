@@ -14,8 +14,32 @@ if(!isset($_SESSION['id'])){
     <link rel="stylesheet" href="style/style.css">
     <title>Izmena Naloga|Mini-Igre</title>
 </head>
-<body  onload="proveriDostupnost(); proveriKorisnika2();">
+<body  onload="proveriIzmene()">
     <?php include "includes/header.inc.php";?>  
+
+    <!-- Modal for succes on name change -->
+    <div class="modal fade" id="nameSucces" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:green;">Ime uspesno promenjeno!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal for succes on password change -->
+  <div class="modal fade" id="passSucces" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:green;">Lozinka uspesno promenjena!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- Modal -->
@@ -117,5 +141,9 @@ if(!isset($_SESSION['id'])){
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
         <script src="/mini-igre/script/registerValidation.js"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.6.4.min.js"
+  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+  crossorigin="anonymous"></script>
 </body>
 </html>

@@ -35,7 +35,25 @@ const setSucces = element=>{
     inputControl.classList.remove('error');
 };
 
+const proveriIzmene=()=>{
+    const key=window.location.search;
+    const urlParams=new URLSearchParams(key);
+    const param=urlParams.get('error');
 
+    if(param=="ZauzetoIme"){
+        setError(ime,"Korisnicko ime je zauzeto!");
+    }
+    else if(param=="PogresnaSifra"){
+        setError(staraSifra,"Lozinka nije tacna!");
+    }
+    else if(param=="imeUspesno"){
+        $('#nameSucces').modal('show');
+    }
+    else if(param=="UspesnoPromenjenaSifra"){
+        $('#passSucces').modal('show');
+    }
+
+}
 const proveriDostupnost=()=>{
     const key=window.location.search;
     const urlParams=new URLSearchParams(key);
@@ -66,17 +84,7 @@ const proveriKorisnika=()=>{
     }
     
 }
-const proveriKorisnika2=()=>{
-    const key=window.location.search;
-    const urlParams=new URLSearchParams(key);
-    const param=urlParams.get('error');
- 
-     if(param=="PogresnaSifra"){
-        setError(staraSifra,"Pogresna lozinka");
-        return false;
-    }
-    
-}
+
 const proveriIzmenuIme=()=>{
     const imeV=ime.value.trim();
     if(imeV==''){

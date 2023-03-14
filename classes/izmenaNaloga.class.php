@@ -29,6 +29,10 @@ session_start();
                 $stmt->bindParam(":id",$id);
                 $id=$_SESSION['id'];
                 if($stmt->execute()){
+                    
+                    
+                    $_SESSION['ime']=$ime;
+                    
                     $dbh->commit();
                     header("location: /mini-igre/izmenaNaloga.php?error=imeUspesno");
                     exit();
