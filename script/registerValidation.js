@@ -42,9 +42,11 @@ const proveriIzmene=()=>{
 
     if(param=="ZauzetoIme"){
         setError(ime,"Korisnicko ime je zauzeto!");
+        ime.scrollIntoView();
     }
     else if(param=="PogresnaSifra"){
         setError(staraSifra,"Lozinka nije tacna!");
+        staraSifra.scrollIntoView();
     }
     else if(param=="imeUspesno"){
         $('#nameSucces').modal('show');

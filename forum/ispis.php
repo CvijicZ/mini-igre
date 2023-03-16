@@ -11,16 +11,19 @@ class ispis{
     $stmt->execute();
     global $idAutora;
     global $idObjave;
- 
+
 foreach($stmt as $row){
     $idAutora=$row['idAutora']; 
     $idObjave=$row['idObjave'];
-    echo "<div class='objava'>". "<p class='ime'>Objavio: " .  ispis::dajIme(). "</p>" . 
-    "<h4 class='naslov'>"  . $row['naslov'] ."</h4>" .$row['sadrzaj']  . "<p class='vreme'>" . ispis::dajVreme() ."</p>".  "</div>";
+    echo "<div class='table-row'>"  . "<div class='subjects'>" .
+    "<a href=''>".$row['naslov'] . "</a>" . "<br>". "<div class='avatar'>" . "</div>" . "<span>Objavio " . ispis::dajIme() . "<div class='replies'> 0 <br> 2 views". "</div>" . "<div class='last-reply'>" . ispis::dajVreme() . "</div>" . "</b>" ."</span>" . "</div>"  
+     . "</div>" ;
+     
     
  
     
 }
+
     }
     private function dajIme(){
         include "../classes/dbh.php";

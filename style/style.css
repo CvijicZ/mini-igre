@@ -142,47 +142,16 @@ header{
 }
 
 
-/* Forum */
+
 .sveTemeBody{
     background-image: linear-gradient(black,gray);
-    height: 100vh;
+    
 
-}
-.main{
-    
-    
-    color: black;
-    padding-top: 20px;
-   
-   
 }
 
 
-.objava{
-    display: flexbox;
-    justify-content: center;
-    text-align: center;
-    background-color: rgb(202, 194, 194);
-    width: 50vw;   
-    height:10%;
-   margin: auto;
-}
-.main .naslov{
-    text-align: center;
-    color: blue;
-      
-}
-.main .vreme{
-    text-align: right;
-  
-   
-}
-.main .ime{
-    
-text-align: left;
- 
-    
-}
+
+
 
 
 
@@ -210,5 +179,74 @@ text-align: left;
     }
  
     
- 
+
+
+
+
+.containerForum{
+    margin: 20px;
+    padding: 20px;
+    color: red;
+}
+
+.avatar{
+    width: 100px;
+   height: 100px;
+    
+}
+.table-row{
+  display: flex;
+  
+    background-color: rgb(57, 58, 59);
+}
+
+.table-row .avatar, .table-row .subjects, .table-row .replies, .table-row .last-reply{
+    padding: 5px;
+    margin: 2px;
+    background-color: #131415;
+}
+
+.table-row .subjects{
+    flex: 60%;
+    align-items: center;
+}
+.table-row .avatar{
+    background-image: url("/mini-igre/img/avatar.jfif");
+}
+.table-row .subjects a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 31px;
    
+}
+.table-row .subjects span{
+    float: left;
+    font-size: 14px;
+   
+}
+
+.table-row .replies{
+    flex: 5%;
+    
+    
+}
+
+.table-row .last-reply{
+    flex: 10%;
+}
+@media only screen and (max-width:950px){
+    .table-row{
+        display: flexbox;
+        
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        
+    }
+    .table-row .subjects{
+        width: 60%;
+        text-align: center;
+    }
+
+}
