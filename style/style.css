@@ -241,6 +241,9 @@ table, th, td {
 table th{
     background-color: #84fab0;
 }
+table td{
+    text-align: center;
+}
 
 
 
