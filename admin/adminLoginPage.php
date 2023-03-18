@@ -10,11 +10,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-      <link rel="stylesheet" href="style/style.css">
+      <link rel="stylesheet" href="/mini-igre/style/style.css">
       <title>Admin</title>
   </head>
   <body>
-      <?php include"/mini-igre/includes/header.inc.php"; ?>
+      <?php include "../includes/header.inc.php"; ?>
       <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
