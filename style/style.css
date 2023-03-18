@@ -141,22 +141,6 @@ header{
     }
 }
 
-
-
-.sveTemeBody{
-    background-image: linear-gradient(black,gray);
-    
-
-}
-
-
-
-
-
-
-
-
-
 .gradient-custom-3 {
     /* fallback for old browsers */
     background: #84fab0;
@@ -178,12 +162,96 @@ header{
     background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
     }
  
-    
-
-
-
-
 .containerForum{
+    background: rgb(34, 33, 33);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    width: 80vw;
+    padding: 0.5em;
+    margin: 5vh auto 0;
+}
+    
+.table-row{
+    background-color: rgb(85, 88, 88);
+    color: white;
+    margin: 0.5em;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.table-row span{
+    padding-right: 10px;
+}
+.table-row .avatar{
+    width: 80px;
+    height: 80px;
+    border-radius: 50% 50%;
+    background-image: url("/mini-igre/img/avatar.jfif");
+    background-repeat: no-repeat;
+  margin-left: 0;
+  padding-left: 0;
+ 
+}
+.table-row .naslov a{
+    color: red;
+    text-decoration: none;
+    font-size: 2em;
+    
+}
+@media only screen and (max-width:950px){
+    .containerForum{ 
+        width: 80vw;  
+        flex-direction: column;     
+    }
+    .table-row{
+       flex-direction: column;
+        color: white;
+       
+        
+    }
+    .table-row .avatar{
+        align-self: baseline;
+        order: 2;
+        
+    }
+    .table-row span{
+        align-self: baseline;
+       
+        
+    }
+    .table-row .naslov a{
+        order: 1;
+    }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Old forum(downloaded) */
+/* .containerForum{
     margin: 20px;
     padding: 20px;
     color: red;
@@ -200,26 +268,26 @@ header{
     background-color: rgb(57, 58, 59);
 }
 
-.table-row .avatar, .table-row .subjects, .table-row .replies, .table-row .last-reply{
+.table-row .avatar, .table-row .naslov, .table-row .replies, .table-row .last-reply{
     padding: 5px;
     margin: 2px;
     background-color: #131415;
 }
 
-.table-row .subjects{
+.table-row .naslov{
     flex: 60%;
     align-items: center;
 }
 .table-row .avatar{
     background-image: url("/mini-igre/img/avatar.jfif");
 }
-.table-row .subjects a{
+.table-row .naslov a{
     text-decoration: none;
     text-align: center;
     font-size: 31px;
    
 }
-.table-row .subjects span{
+.table-row .naslov span{
     float: left;
     font-size: 14px;
    
@@ -234,19 +302,5 @@ header{
 .table-row .last-reply{
     flex: 10%;
 }
-@media only screen and (max-width:950px){
-    .table-row{
-        display: flexbox;
-        
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
 
-        
-    }
-    .table-row .subjects{
-        width: 60%;
-        text-align: center;
-    }
-
-}
+} */
