@@ -79,7 +79,7 @@
   });     
   $(document).on('click', '.obrisi', function(){  
         var id=$(this).data("id");   
-        if(confirm("Are you sure you want to delete this?"))  
+        if(confirm("Da li ste sigurni da zelite da obrisete korisnicki nalog ciji je ID:" +id))  
         {  
             $.ajax({  
                 url:"adminClasses/obrisiKorisnika.php",  
@@ -99,6 +99,54 @@
             });  
         }  
     });  
+
+    $(document).on('click', '.dajAdmina', function(){  
+        var id=$(this).data("id");   
+        if(confirm("Da li ste sigurni da zelite da dodelite admina korisniku ciji je ID: " +id))  
+        {  
+            $.ajax({  
+                url:"adminClasses/dajAdmina.php",  
+                method:"POST",  
+                data:{id:id},  
+                dataType:"text",  
+                success:function(data){  
+                    alert(data);  
+                    $.ajax({  
+            url:"/mini-igre/admin/adminClasses/prikaziKorisnike.php",  
+            method:"POST",  
+            success:function(data){  
+				$('#live_data').html(data);  
+            }  
+        });                                   
+                }  
+            });  
+        }  
+    }); 
+
+    $(document).on('click', '.oduzmiAdmina', function(){  
+        var id=$(this).data("id");   
+        if(confirm("Da li ste sigurni da zelite da oduzmete admina korisniku ciji je ID: " +id))  
+        {  
+            $.ajax({  
+                url:"adminClasses/oduzmiAdmina.php",  
+                method:"POST",  
+                data:{id:id},  
+                dataType:"text",  
+                success:function(data){  
+                    alert(data);  
+                    $.ajax({  
+            url:"/mini-igre/admin/adminClasses/prikaziKorisnike.php",  
+            method:"POST",  
+            success:function(data){  
+				$('#live_data').html(data);  
+            }  
+        });                                   
+                }  
+            });  
+        }  
+    }); 
+
+
 
    </script>
  
