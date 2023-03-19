@@ -6,7 +6,8 @@ $stmt->execute();
 echo "<table>";
 echo "<tr>" . "<th>ID</th>" . "<th>IME</th>" . "<th>Email</th>". "<th>Avatar</th>". "<th>Admin</th>". "<th>Postavi za admina</th>". "<th>Obrisi nalog</th>" ."</tr>";
  foreach($stmt as $row){
-    echo "<tr>" . "<td>" . $row['id'] . "</td>" . "<td>" . $row['ime'] . "</td>" . "<td>" . $row['email']. "</td>". "<td>" . $row['avatar']. "</td>"."<td>" . $row['admin']. "</td>" ."<td> <button>Daj admina </button >" ."</td>". "<td><button type='button' style='background-color:red;'>X</button></td>"  . "</tr>" ;
+    echo "<tr>" . "<td>" . $row['id'] . "</td>" . "<td>" . $row['ime'] . "</td>" . "<td>" . $row['email']. "</td>". "<td>" . $row['avatar']. "</td>"."<td>" . $row['admin']. "</td>" ."<td> <button>Daj admina </button >" ."</td>".
+ "<td><button type='button' style='background-color:red;' class='obrisi' data-id=" .$row['id'] . ">X</button></td>"  . "</tr>" ;
 }
 echo "</table>";
 
@@ -14,7 +15,7 @@ echo "</table>";
 
 
 
-// <table>
+// <table><button type="button" name="delete_btn" data-id3="'.$row["id"].'" class="btn btn-xs btn-danger btn_delete">x</button>
 //   <tr>
 //     <th>Company</th>
 //     <th>Contact</th>

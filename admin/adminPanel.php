@@ -65,7 +65,7 @@
    <script>
     
     $(document).ready(function(){  
-      $(document).on('click', '#btn_add', function()  
+        $(document).on('click', '#btn_add', function()  
     {  
         $.ajax({  
             url:"/mini-igre/admin/adminClasses/prikaziKorisnike.php",  
@@ -76,7 +76,30 @@
         });  
     });
     
-  });
+  });     
+  $(document).on('click', '.obrisi', function(){  
+        var id=$(this).data("id");   
+        if(confirm("Are you sure you want to delete this?"))  
+        {  
+            $.ajax({  
+                url:"adminClasses/obrisiKorisnika.php",  
+                method:"POST",  
+                data:{id:id},  
+                dataType:"text",  
+                success:function(data){  
+                    alert(data);  
+                    $.ajax({  
+            url:"/mini-igre/admin/adminClasses/prikaziKorisnike.php",  
+            method:"POST",  
+            success:function(data){  
+				$('#live_data').html(data);  
+            }  
+        });                                   
+                }  
+            });  
+        }  
+    });  
+
    </script>
  
 
