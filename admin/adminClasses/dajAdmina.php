@@ -18,10 +18,11 @@ if(isset($_SESSION['adminId'])){
         $result=$stmt->fetchAll();
         $stmt->closeCursor();
 
-        $sql="INSERT INTO admin(ime,sifra) VALUES(:ime,:sifra)";
+        $sql="INSERT INTO admin(ime,sifra,igracId) VALUES(:ime,:sifra,:igracId)";
         $stmt=$dbh->prepare($sql);
         $stmt->bindParam(":ime", $result[0]["ime"]);
         $stmt->bindParam(":sifra", $result[0]["sifra"]);
+        $stmt->bindParam(":igracId", $_POST['id']);
         if($stmt->execute()){
             echo "Korisniku je uspesno dodeljena administratorska privilegija!";
             $dbh->commit();
