@@ -38,18 +38,22 @@
     </div>
   </div>
 </nav>
+<div class="container">
     <h1 class="text-center">AdminPanel</h1>
-    <form action="/mini-igre/admin/adminClasses/adminRadnje.php" method="POST">
-    
-  <div class="container">
+
+    <form action="adminClasses/dodajAvatar.php" method="POST" enctype="multipart/form-data"  >
+  
   <h4>Dodaj novi avatar</h4>
     
     <div class="mb-3">
-  <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-  <input class="form-control" type="file" id="formFileMultiple" multiple>
+  <!-- <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+  <input class="form-control" type="file" name="slika" id="formFileMultiple" multiple> -->
+  <input type="file" name="slika">
+  <input type="submit" name="uploadSubmit" value="Dodaj">
+  </form>
 </div>
 <hr>
-</form>
+
 
 <h4>Svi korisnici</h4>
 <button type="button" id="btn_add" class="btn-primary">Prikazi sve korisnike</button>

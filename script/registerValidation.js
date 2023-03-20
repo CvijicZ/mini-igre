@@ -6,6 +6,9 @@ const sifra=document.getElementById('sifra');
 const sifra2=document.getElementById('sifra2');
 const staraSifra=document.getElementById('staraSifra');
 
+const naslov=document.getElementById('naslov');
+const sadrzaj=document.getElementById('sadrzaj');
+
 const isValidEmail=mejl=>{
     const rgx=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return rgx.test(String(mejl).toLowerCase());
@@ -56,6 +59,7 @@ const proveriIzmene=()=>{
     }
 
 }
+
 const proveriDostupnost=()=>{
     const key=window.location.search;
     const urlParams=new URLSearchParams(key);
@@ -159,6 +163,29 @@ const proveriPrijavu=()=>{
     }
 
 
+}
+const proveriObjavu=()=>{
+    const naslovV=naslov.value.trim();
+    const sadrzajV=sadrzaj.value.trim();
+
+    if(naslovV==''){
+        setError(naslov,"Objava mora da poseduje naslov!");
+        return false;
+    }
+    else if(naslovV.length>30){
+        setError(naslov,"Naslov ne moze biti duzi od 30 karaktera");
+        return false;
+    }
+    else {
+        setSucces(naslov);
+    }
+    if(sadrzajV==''){
+        setError(sadrzaj,"Objava mora da ima sadrzaj!");
+        return false;
+    }
+    else {
+        setSucces(sadrzaj);
+    }
 }
 const proveriRegistraciju = () => {
     const imeV = ime.value.trim();
