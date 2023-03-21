@@ -48,7 +48,7 @@
     <div class="mb-3">
   <!-- <label for="formFileMultiple" class="form-label">Multiple files input example</label>
   <input class="form-control" type="file" name="slika" id="formFileMultiple" multiple> -->
-  <input type="file" name="slika">
+  <input type="file" name="slika" accept="image/*">
   <input type="submit" name="uploadSubmit" value="Dodaj">
   </form>
 </div>
