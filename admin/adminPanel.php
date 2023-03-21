@@ -53,6 +53,10 @@
   </form>
 </div>
 <hr>
+<h4>Pregledaj dostupne avatare</h4>
+<button type="button" id="prikaziAvatar">Prikazi</button>
+<div id="sviAvatari"></div>
+<hr>
 
 
 <h4>Svi korisnici</h4>
@@ -81,6 +85,23 @@
     });
     
   });     
+
+  $(document).ready(function(){  
+        $(document).on('click', '#prikaziAvatar', function()  
+    {  
+        $.ajax({  
+            url:"/mini-igre/admin/adminClasses/prikaziAvatar.php",  
+            method:"POST",  
+            success:function(data){  
+				$('#sviAvatari').html(data);  
+            }  
+        });  
+    });
+    
+  }); 
+  
+
+  
   $(document).on('click', '.obrisi', function(){  
         var id=$(this).data("id");   
         if(confirm("Da li ste sigurni da zelite da obrisete korisnicki nalog ciji je ID:" +id))  
