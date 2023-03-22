@@ -15,7 +15,7 @@ class ispis{
 foreach($stmt as $row){
     $idAutora=$row['idAutora']; 
     $idObjave=$row['idObjave'];
-    echo "<div class='table-row'>". "<div class='avatar'>" . "</div>"   . "<div class='naslov'>" .
+    echo "<div class='table-row'>". "<div class='avatar'>" . ispis::dajAvatar() . "</div>"   . "<div class='naslov'>" .
     "<a href=''>".$row['naslov'] . "</a>" . "<br>". "</div>". "<span>" . ispis::dajIme() . "<div class='replies'> 2 odgovora". "</div>" . "<div class='last-reply'>" . ispis::dajVreme() . "</div>" . "</b>" ."</span>" . "</div>"  
      ;
      
@@ -49,6 +49,26 @@ foreach($stmt as $row){
         $timestamp=$result[0]['vremeObjave'];
         $dateTime=new DateTime("$timestamp");
         return $dateTime->format('d-m-Y H:i');
+    }
+    private function dajAvatar(){
+        include "../classes/dbh.php";
+        global $idAutora;
+        $sql="SELECT avatarId FROM igrac WHERE id=:id";
+        $stmt=$dbh->prepare($sql);
+        $stmt->bindParam(":id", $idAutora);
+        $stmt->execute();
+        $idAvatar=$stmt->fetchColumn();
+        $stmt->closeCursor();
+
+        $sql="SELECT avatar FROM avatar WHERE id=:id";
+        $stmt=$dbh->prepare($sql);
+        $stmt->bindParam(":id", $idAvatar);
+        $stmt->execute();
+        $avatar=$stmt->fetchColumn();
+    
+        
+        return '<img class="avatar" src="data:image;base64,' .base64_encode ($avatar) . '" > ';
+        
     }
 
 

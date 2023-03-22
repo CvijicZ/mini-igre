@@ -186,11 +186,11 @@ header{
 .table-row span{
     padding-right: 10px;
 }
-.table-row .avatar{
+ .avatar{
     width: 80px;
     height: 80px;
     border-radius: 50% 50%;
-    background-image: url("/mini-igre/img/avatar.jfif");
+    
     background-repeat: no-repeat;
   margin-left: 0;
   padding-left: 0;
