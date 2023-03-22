@@ -97,6 +97,17 @@ class ProveriKorisnika{
 
 }
 class RegistrujKorisnika extends ProveriKorisnika{  
+
+    protected function nasumicanAvatar(){
+        include "dbh.php";
+        $sql="SELECT id FROM avatar ORDER BY RAND() LIMIT 1";
+        $stmt=$dbh->prepare($sql);
+        $stmt->execute();
+        $result=$stmt->fetchColumn();
+        $stmt->closeCursor();
+        return $result;
+    }
+
     public function RegistracijaKorisnika(){
         
     if($this->PraznoPolje()==false)
@@ -132,11 +143,12 @@ class RegistrujKorisnika extends ProveriKorisnika{
     }
 
     include "dbh.php";
-    $sql="INSERT INTO igrac(email,ime,sifra) VALUES(:mejl,:ime,:sifra)";  // INSERT UPIT
+    $sql="INSERT INTO igrac(email,ime,sifra,avatarId) VALUES(:mejl,:ime,:sifra,:avatar)";  // INSERT UPIT
     $stmt=$dbh->prepare($sql);
     $stmt->bindParam(":mejl", $this->mejl, PDO::PARAM_STR,320);
     $stmt->bindParam(":ime", $this->ime, PDO::PARAM_STR,20);
     $stmt->bindParam(":sifra", $this->sifra, PDO::PARAM_STR,50);
+    $stmt->bindParam(":avatar", $this->nasumicanAvatar());
     if($stmt->execute()){
         header("location: ../includes/regSucces.inc.php");
         exit();
