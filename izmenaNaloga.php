@@ -12,6 +12,12 @@ if(!isset($_SESSION['id'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
+    <style>input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+ 
+}</style>
     <title>Izmena Naloga|Mini-Igre</title>
 </head>
 <body  onload="proveriIzmene()">
@@ -63,6 +69,27 @@ if(!isset($_SESSION['id'])){
   </div>
 </div>
 
+<!-- Modal for avatar show & change -->
+<div class="modal fade" id="avatar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Promeni avatar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="sviAvatari"></div>
+      <div class="modal-footer">
+      <button type='submit' form='promenaAvatara' class='btn btn-primary' >Primeni</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- End of modal -->
+
 
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
@@ -71,6 +98,9 @@ if(!isset($_SESSION['id'])){
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Izmeni nalog</h2>
+
+                <h3>Izaberi avatar</h3>
+                <button type="button" id="avatar" data-bs-toggle="modal" data-bs-target="#avatar">Avatari</button>
 
               <form action="/mini-igre/classes/izmenaNaloga.class.php" method="post" id="form" onsubmit="return proveriIzmenuIme()" onkeyup="return proveriIzmenuIme()">
                  <hr>
@@ -145,5 +175,41 @@ if(!isset($_SESSION['id'])){
   src="https://code.jquery.com/jquery-3.6.4.min.js"
   integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
   crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){  
+        $(document).on('click', '#avatar', function()  
+    {  
+        $.ajax({  
+            url:"classes/prikaziSveAvatare.php",  
+            method:"POST",  
+            success:function(data){  
+				$('.sviAvatari').html(data);  
+        $(".sviAvatari").click(function(event) {
+          event.stopPropagation();
+          });
+            }  
+
+         
+            
+        });  
+    });
+    
+  }); 
+
+
+  $(document).ready(function() {
+  // Delegiranje događaja na roditeljski element (modal)
+  $('.sviAvatari').on('click', 'label', function() {
+    // Uklanjamo "active" klasu sa svih label elemenata koji je imaju
+    $('label').removeClass('active');
+    
+    // Dodajemo "active" klasu na label koji je kliknut
+    $(this).addClass('active');
+  });
+});
+
+
+
+  </script>
 </body>
 </html>

@@ -231,28 +231,9 @@ header{
 
 
 
-
-
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-table th{
-    background-color: #84fab0;
+.active{
+    border: 2px solid red;
 }
-table td{
-    text-align: center;
-}
-
-
-
-
-
-
-
-
-
 
 
 
