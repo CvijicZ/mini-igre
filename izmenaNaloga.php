@@ -12,12 +12,14 @@ if(!isset($_SESSION['id'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
-    <style>input[type="radio"] {
+    <style>
+      
+  input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
- 
-}</style>
+                      }
+</style>
     <title>Izmena Naloga|Mini-Igre</title>
 </head>
 <body  onload="proveriIzmene()">
@@ -198,13 +200,9 @@ if(!isset($_SESSION['id'])){
 
 
   $(document).ready(function() {
-  // Delegiranje događaja na roditeljski element (modal)
-  $('.sviAvatari').on('click', 'label', function() {
-    // Uklanjamo "active" klasu sa svih label elemenata koji je imaju
-    $('label').removeClass('active');
-    
-    // Dodajemo "active" klasu na label koji je kliknut
-    $(this).addClass('active');
+  $('.sviAvatari').on('click', '.klikabilan', function() {
+    $('.klikabilan').removeClass('activeAvatar');
+    $(this).addClass('activeAvatar');
   });
 });
 
