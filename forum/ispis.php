@@ -13,7 +13,7 @@ foreach($stmt as $row){
     $idAutora=$row['idAutora']; 
     $idObjave=$row['idObjave'];
     echo "<div class='table-row'>". "<div class='avatar'>" . ispis::dajAvatar() . "</div>"   . "<div class='naslov'>" .
-    "<a href=''>".$row['naslov'] . "</a>" . "<br>". "</div>". "<span>" . ispis::dajIme() . "<div class='replies'> 2 odgovora". "</div>" . "<div class='last-reply'>" . ispis::dajVreme() . "</div>" . "</b>" ."</span>" . "</div>"  
+    "<a href='prikaziTemu.php?id=" .$row['idObjave'] . "'>".$row['naslov'] . "</a>" . "<br>". "</div>". "<span>" . ispis::dajIme() . "<div class='replies'> 2 odgovora". "</div>" . "<div class='last-reply'>" . ispis::dajVreme() . "</div>" . "</b>" ."</span>" . "</div>"  
      ;  
 }
 

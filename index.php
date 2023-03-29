@@ -17,8 +17,8 @@
     <div class="row igre">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Iks-Oks</h5>
-                <a href="#"><img class="card-img-top" src="img/iks-oks.webp" alt="Iks-Oks igra" width="200px"
+                <h5 class="card-title">Programiranje Kviz</h5>
+                <a href="igre/kviz/index.html"><img class="card-img-top" src="img/kviz1.jpg" alt="Iks-Oks igra" width="200px"
                         height="200px"></a>
             </div>
         </div>
