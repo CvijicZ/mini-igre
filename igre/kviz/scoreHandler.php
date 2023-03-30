@@ -11,17 +11,14 @@ if(isset($_GET) || isset($_SESSION['id'])){
     $stmt->closeCursor();
 
     if($topScore < $_GET['score']){
-        $sql="INSERT INTO rezultatiKviz(idIgraca,rezultat) VALUE(:idIgraca,:rezultat)";
+        $sql="INSERT INTO rezultatiKviz(idIgraca,rezultat,imeIgraca) VALUE(:idIgraca,:rezultat,:imeIgraca)";
         $stmt=$dbh->prepare($sql);
         $stmt->bindParam(":idIgraca", $_SESSION['id']);
         $stmt->bindParam(":rezultat", $_GET['score']); 
+        $stmt->bindParam(":imeIgraca", $_SESSION['ime']);
         $stmt->execute();
         echo "Cestitam, oborili ste sopstveni skor!";
     }
     else {echo "Nazalost, niste oborili sopstveni skor.";}
-
-   
-    
-
 }
 

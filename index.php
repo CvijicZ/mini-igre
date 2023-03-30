@@ -14,7 +14,9 @@
    
 
     <?php include"includes/header.inc.php";?>
-    <div class="row igre">
+    <?php if(isset($_SESSION['id'])){?>
+
+        <div class="row igre">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Programiranje Kviz</h5>
@@ -72,6 +74,9 @@
             </div>
         </div>
     </div>
+
+    <?php } else { echo "<h3 class='text-center'>Morate biti prijavljeni da biste igrali igre</h3>";} ?>
+   
     <div>
      <div class="wave"></div>
      <div class="wave"></div>

@@ -15,7 +15,7 @@
             <h2 id="end-text">Rezultat:</h2>
             <h1 id="finalScore">0</h1>          
             <a href="game.html" class="btn">Igraj opet!</a>
-            <a href="index.html" class="btn">Pocetna<i class="fas fa-home"></i></a>
+            <a href="index.php" class="btn">Pocetna<i class="fas fa-home"></i></a>
         </div>
     </div>
     <script src="end.js"></script>

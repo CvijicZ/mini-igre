@@ -189,13 +189,9 @@ if(!isset($_SESSION['id'])){
         $(".sviAvatari").click(function(event) {
           event.stopPropagation();
           });
-            }  
-
-         
-            
+            }            
         });  
     });
-    
   }); 
 
 

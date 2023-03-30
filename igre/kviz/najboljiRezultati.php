@@ -4,9 +4,11 @@ $sql="SELECT * FROM rezultatikviz ORDER BY rezultat DESC LIMIT 10;";
 $stmt=$dbh->prepare($sql);
 $stmt->execute();
 
-echo "<table>" . "<tr> <th>Ime</th> <th>Skor</th></tr>" . "<tr>";
+echo "<table>" . "<tr> <th>Mesto</th> <th>Ime</th> <th>Skor</th></tr>";
+$pozicija=1;
 foreach($stmt as $row){
-    echo "<td>" . $row['idIgraca'] . $row['rezultat'] . "</td>" . "<br>";
+    echo "<tr>" . "<td>" . $pozicija++ . "</td>"  . "<td>" . $row['imeIgraca'] . "</td>" . "<td>" . $row['rezultat'] . "</td>" . "</tr>";
 }
 
-echo "</tr>" . "</table>";
+echo "</table>";
+
