@@ -14,11 +14,11 @@ session_start();
             $stmt->execute();
         
             if($stmt->rowCount()>0){
-                header("location: /mini-igre/izmenaNaloga.php?error=ZauzetoIme");     
+                header("location: ../izmenaNaloga.php?error=ZauzetoIme");     
                 exit();
             }
             else if(!ctype_alnum($ime)){
-                header("location: /mini-igre/izmenaNaloga.php?error=FormatImena");
+                header("location: ../izmenaNaloga.php?error=FormatImena");
                 exit();    
             }
             else {
@@ -34,7 +34,7 @@ session_start();
                     $_SESSION['ime']=$ime;
                     
                     $dbh->commit();
-                    header("location: /mini-igre/izmenaNaloga.php?error=imeUspesno");
+                    header("location: ../izmenaNaloga.php?error=imeUspesno");
                     exit();
                 }
             }
@@ -63,7 +63,7 @@ session_start();
             $stmt->execute();
             $sif=$stmt->fetchAll(PDO::FETCH_ASSOC);
             if($sifra!==$sif[0]['sifra']){
-                header("location: /mini-igre/izmenaNaloga.php?error=PogresnaSifra");
+                header("location: ../izmenaNaloga.php?error=PogresnaSifra");
                 $stmt=null;
                 exit();
             }
@@ -75,7 +75,7 @@ session_start();
                 $stmt->bindParam(":ime",$ime);
                 $stmt->execute();
                 $dbh->commit();
-                header("location: /mini-igre/izmenaNaloga.php?error=UspesnoPromenjenaSifra");
+                header("location: ../izmenaNaloga.php?error=UspesnoPromenjenaSifra");
                 exit();
             }
 

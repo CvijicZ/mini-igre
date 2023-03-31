@@ -13,10 +13,10 @@
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                          <ul class="navbar-nav ms-auto ">
                                 <li class="nav-item">
-                                 <a class="nav-link" href="/mini-igre/index.php">Pocetna</a>
+                                 <a class="nav-link" href="../index.php">Pocetna</a>
                              </li>
                              <li class="nav-item">
-                                 <a class="nav-link" href="/mini-igre/forum/sveTeme.php">Forum</a>
+                                 <a class="nav-link" href="../forum/sveTeme.php">Forum</a>
                              </li>
                              <li class="nav-item">
                                  <a class="nav-link" href="https://videoigrepsihologija3.wordpress.com" target="_blank" >Blog(WordPress)</a>
@@ -24,15 +24,15 @@
                             </ul>
                             <ul class="navbar-nav ms-auto ">
                              <li class="nav-but">
-                                 <a class="btn btn-outline-light" href="/mini-igre/izmenaNaloga.php"><?php echo $_SESSION['ime']; ?></a>
+                                 <a class="btn btn-outline-light" href="../izmenaNaloga.php"><?php echo $_SESSION['ime']; ?></a>
                              </li>
                              <?php if($_SESSION['admin']==true){?>
                              <li class="nav-but">                             
-                                <a href="/mini-igre/admin/adminLoginPage.php" target="_blank" class="btn btn-outline-light">Admin-Panel</a>
+                                <a href="../admin/adminLoginPage.php" target="_blank" class="btn btn-outline-light">Admin-Panel</a>
                              </li>
                              <?php } ?>
                              <li class="nav-but">
-                             <a class="btn btn-outline-light" href="/mini-igre/classes/logout.php">Odjavi se</a>
+                             <a class="btn btn-outline-light" href="../classes/logout.php">Odjavi se</a>
                             </li>
                          </ul>
                             </div>
@@ -52,10 +52,10 @@
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                          <ul class="navbar-nav ms-auto text-center">
                                  <li class="nav-item">
-                                 <a class="nav-link" href="/mini-igre/index.php">Pocetna</a>
+                                 <a class="nav-link" href="../index.php">Pocetna</a>
                              </li>
                              <li class="nav-item">
-                                 <a class="nav-link" href="/mini-igre/forum/sveTeme.php">Forum</a>
+                                 <a class="nav-link" href="../forum/sveTeme.php">Forum</a>
                              </li>
                              <li class="nav-item">
                                  <a class="nav-link" href="#">Blog</a>
@@ -63,23 +63,17 @@
                                 </ul>
                                   <ul class="navbar-nav ms-auto text-center ">
                              <li class="nav-but">
-                                 <a class="btn btn-outline-light" href="/mini-igre/prijava.php">Prijavi se</a>
+                                 <a class="btn btn-outline-light" href="../prijava.php">Prijavi se</a>
                              </li>
                              <li class="nav-but">
-                                 <a class="btn btn-outline-light" href="/mini-igre/register.php">Registruj se</a>
+                                 <a class="btn btn-outline-light" href="../register.php">Registruj se</a>
                              </li>
                          </ul>
                      </div>
-                 </nav>
-                            
-                          
-                       
-                                
+                 </nav>                                                                         
                 <?php
                 } 
                 ?>
-
-
  </header>
  
            

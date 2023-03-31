@@ -1,6 +1,6 @@
 <?php session_start();
 if(!isset($_SESSION['id'])){
-    header("location: /mini-igre/index.php");
+    header("location: ./index.php");
     exit();
 }?>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ if(!isset($_SESSION['id'])){
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/mini-igre/classes/obrisiNalog.php" method="POST">       
+        <form action="classes/obrisiNalog.php" method="POST">       
             <p>Brisanje naloga je trajno! Ukoliko pritisnete na dugme "Obrisi nalog" vise necete moci da opozovete ovu promenu!</p> 
       </div>
       <div class="modal-footer">
@@ -104,7 +104,7 @@ if(!isset($_SESSION['id'])){
                 <h3>Izaberi avatar</h3>
                 <button type="button" id="avatar" data-bs-toggle="modal" data-bs-target="#avatar">Avatari</button>
 
-              <form action="/mini-igre/classes/izmenaNaloga.class.php" method="post" id="form" onsubmit="return proveriIzmenuIme()" onkeyup="return proveriIzmenuIme()">
+              <form action="classes/izmenaNaloga.class.php" method="post" id="form" onsubmit="return proveriIzmenuIme()" onkeyup="return proveriIzmenuIme()">
                  <hr>
                 <div class="form-outline mb-4">
                   <div class="input-control">
@@ -120,7 +120,7 @@ if(!isset($_SESSION['id'])){
 </form>
                 <hr>
 
-                <form action="/mini-igre/classes/izmenaNaloga.class.php" method="post"  onsubmit="return proveriIzmenuSifra()" onkeyup="return proveriIzmenuSifra()">
+                <form action="classes/izmenaNaloga.class.php" method="post"  onsubmit="return proveriIzmenuSifra()" onkeyup="return proveriIzmenuSifra()">
                 <div class="form-outline mb-4">
                  
                     <h3>Promeni sifru</h3>
@@ -172,7 +172,7 @@ if(!isset($_SESSION['id'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-        <script src="/mini-igre/script/registerValidation.js"></script>
+        <script src="script/registerValidation.js"></script>
         <script
   src="https://code.jquery.com/jquery-3.6.4.min.js"
   integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="

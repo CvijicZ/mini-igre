@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Document</title>
 </head>
-  <?php include"includes/header.inc.php";?>
+  <?php include "includes/header.inc.php";?>
   <body class="bodyReg" onload="ScrollToTarget(); proveriDostupnost();">
 
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

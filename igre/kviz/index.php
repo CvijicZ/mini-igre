@@ -27,6 +27,7 @@
         <div id="home" class="flex-column flex-center">
             <h1>Cao, <?php echo $_SESSION['ime']?></h1>
             <a href="game.html" class="btn">Igraj</a>
+            <a href="../../index.php" class="btn">Pocetna</a>
             <button type="button" id="highscores-btn" class="btn" data-bs-toggle="modal" data-bs-target="#najRezultati">Najbolji rezultati <i class="fas fa-crown"></i></button>
         </div>
     </div>

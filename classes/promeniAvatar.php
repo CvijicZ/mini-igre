@@ -9,11 +9,11 @@ if(isset($_POST['a'])){
     $stmt->bindParam(":avatarId", $noviIdAvatara);
     $stmt->bindParam(":id", $_SESSION['id']);
     if($stmt->execute()){
-        header("location: /mini-igre/izmenaNaloga.php?error=none");
+        header("location: ../izmenaNaloga.php?error=none");
         exit();
     }
     else {
-        header("location: /mini-igre/izmenaNaloga.php?error=neocekivanaGreska");
+        header("location: ../izmenaNaloga.php?error=neocekivanaGreska");
         exit();
     }
 

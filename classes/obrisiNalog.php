@@ -8,10 +8,7 @@ if($_POST['action']=='obrisiNalog'){
     $id=$_SESSION['id'];
     if($stmt->execute()){
         session_destroy();
-        header("location: /mini-igre/index.php");
+        header("location: ../index.php");
         exit();
     }
-}
-else {
-    echo "zajebo si nesto";
 }

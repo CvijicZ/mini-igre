@@ -140,28 +140,16 @@ header{
         transform: translateX(1);
     }
 }
-
 .gradient-custom-3 {
-    /* fallback for old browsers */
     background: #84fab0;
-    
-    /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
-    
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
     }
     .gradient-custom-4 {
-    /* fallback for old browsers */
     background: #84fab0;
-    
-    /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
-    
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
     }
- 
 .containerForum{
     background: rgb(34, 33, 33);
     display: flex;
@@ -171,8 +159,7 @@ header{
     width: 80vw;
     padding: 0.5em;
     margin: 5vh auto 0;
-}
-    
+} 
 .table-row{
     background-color: rgb(85, 88, 88);
     color: white;
@@ -209,87 +196,19 @@ header{
     }
     .table-row{
        flex-direction: column;
-        color: white;
-       
-        
+        color: white;   
     }
     .table-row .avatar{
         align-self: baseline;
-        order: 2;
-        
+        order: 2;    
     }
     .table-row span{
-        align-self: baseline;
-       
-        
+        align-self: baseline;  
     }
     .table-row .naslov a{
         order: 1;
     }
-  
 }
-
-
-
 .activeAvatar{
     border: 2px solid red;
 }
-
-
-
-
-
-/*Old forum(downloaded) */
-/* .containerForum{
-    margin: 20px;
-    padding: 20px;
-    color: red;
-}
-
-.avatar{
-    width: 100px;
-   height: 100px;
-    
-}
-.table-row{
-  display: flex;
-  
-    background-color: rgb(57, 58, 59);
-}
-
-.table-row .avatar, .table-row .naslov, .table-row .replies, .table-row .last-reply{
-    padding: 5px;
-    margin: 2px;
-    background-color: #131415;
-}
-
-.table-row .naslov{
-    flex: 60%;
-    align-items: center;
-}
-.table-row .avatar{
-    background-image: url("/mini-igre/img/avatar.jfif");
-}
-.table-row .naslov a{
-    text-decoration: none;
-    text-align: center;
-    font-size: 31px;
-   
-}
-.table-row .naslov span{
-    float: left;
-    font-size: 14px;
-   
-}
-
-.table-row .replies{
-    flex: 5%;
-    
-    
-}
-
-.table-row .last-reply{
-    flex: 10%;
-}
-
-} */

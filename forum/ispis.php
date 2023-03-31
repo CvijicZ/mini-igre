@@ -2,7 +2,7 @@
 
 
 class ispis{
-    public function ispis(){
+    public function ispisMetoda(){
     include "../classes/dbh.php";  
     $sql="SELECT * FROM forum ORDER BY vremeObjave DESC";
     $stmt=$dbh->prepare($sql);
@@ -10,6 +10,7 @@ class ispis{
     global $idAutora;
     global $idObjave;
 foreach($stmt as $row){
+    
     $idAutora=$row['idAutora']; 
     $idObjave=$row['idObjave'];
     echo "<div class='table-row'>". "<div class='avatar'>" . ispis::dajAvatar() . "</div>"   . "<div class='naslov'>" .
@@ -67,4 +68,4 @@ foreach($stmt as $row){
 
 }
 $i=new ispis();
-      $i->ispis();
+      $i->ispisMetoda();
