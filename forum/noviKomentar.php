@@ -15,7 +15,3 @@ $stmt->bindParam(":vreme", $vreme);
 $stmt->bindParam(":idObjave", $idObjave);
 $vreme=date('Y-m-d H:i:s');
 $stmt->execute();
-
-
-echo $_GET['comment'];
-echo $_GET['idObjave'];

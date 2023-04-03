@@ -14,7 +14,7 @@ foreach($stmt as $row){
     $idAutora=$row['idAutora']; 
     $idObjave=$row['idObjave'];
     echo "<div class='table-row'>". "<div class='avatar'>" . ispis::dajAvatar() . "</div>"   . "<div class='naslov'>" .
-    "<a href='prikaziTemu.php?id=" .$row['idObjave'] . "'>".$row['naslov'] . "</a>" . "<br>". "</div>". "<span>" . ispis::dajIme() . "<div class='replies'> 2 odgovora". "</div>" . "<div class='last-reply'>" . ispis::dajVreme() . "</div>" . "</b>" ."</span>" . "</div>"  
+    "<a href='prikaziTemu.php?id=" .$row['idObjave'] . "'>".$row['naslov'] . "</a>" . "<br>". "</div>". "<span>" . ispis::dajIme() . "<div class='replies'>" . ispis::dajBrojOdgovora()  ." odgovora". "</div>" . "<div class='last-reply'>" . ispis::dajVreme() . "</div>" . "</b>" ."</span>" . "</div>"  
      ;  
 }
 
@@ -53,16 +53,23 @@ foreach($stmt as $row){
         $stmt->execute();
         $idAvatar=$stmt->fetchColumn();
         $stmt->closeCursor();
-
         $sql="SELECT avatar FROM avatar WHERE id=:id";
         $stmt=$dbh->prepare($sql);
         $stmt->bindParam(":id", $idAvatar);
         $stmt->execute();
-        $avatar=$stmt->fetchColumn();
-    
-        
+        $avatar=$stmt->fetchColumn();  
         return '<img class="avatar" src="data:image;base64,' .base64_encode ($avatar) . '" > ';
         
+    }
+    private function dajBrojOdgovora(){
+        include "../classes/dbh.php";
+        global $idObjave;
+        $sql="SELECT COUNT(*) FROM komentar WHERE idObjave = :idObjave";
+        $stmt=$dbh->prepare($sql);
+        $stmt->bindParam(":idObjave", $idObjave);
+        $stmt->execute();
+        $result=$stmt->fetchColumn();
+        return $result;
     }
 
 
