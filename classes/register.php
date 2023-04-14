@@ -4,22 +4,17 @@ if(isset($_POST['submit'])){
     $ime=$_POST['ime'];
     $sifra=$_POST['sifra'];
     $sifra2=$_POST['sifra2'];
-    
-    // $korisnik=new ProveriKorisnika($mejl,$ime,$sifra,$sifra2);
-    
 class ProveriKorisnika{  
     protected $mejl;
     protected $ime;
     protected $sifra;
     protected $sifra2;
-
    public function __construct($mejl,$ime,$sifra,$sifra2) {
         $this->mejl = $mejl;
         $this->ime=$ime;
         $this->sifra=$sifra;
         $this->sifra2=$sifra2;
       }
-
       public function PraznoPolje(){
       if(empty($this->mejl) || empty($this->ime) || empty($this->sifra) || empty($this->sifra2)){
         return false;
@@ -32,13 +27,19 @@ class ProveriKorisnika{
         if($this->sifra!==$this->sifra2){
           return false;
         }
+        else if(strlen($this->sifra)>50){
+            return false;
+        }
         else {
             return true;
         }
       }
     public function FormatIme(){
-        if(ctype_alnum($this->ime)){   //CTYPE
+        if(ctype_alnum($this->ime)){   
             return true;
+        }
+        else if(strlen($this->ime)>20){
+            return false;
         }
         else {
             return false;
@@ -48,13 +49,15 @@ class ProveriKorisnika{
         if(filter_var($this->mejl, FILTER_VALIDATE_EMAIL)){  
             return true;
         }
+        else if(strlen($this->mejl)>254){
+            return false;
+        }
         else {
             return false;
         }
      }
      public function FormatSifre(){
-        // Min 8 chars, upper, lowwer, number
-        $rgx="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/";
+        $rgx="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w\W]{8,}$/";
         if(preg_match($rgx,$this->sifra)) {
             return true;
         }
@@ -143,11 +146,12 @@ class RegistrujKorisnika extends ProveriKorisnika{
     }
 
     include "dbh.php";
-    $sql="INSERT INTO igrac(email,ime,sifra,avatarId) VALUES(:mejl,:ime,:sifra,:avatar)";  // INSERT UPIT
+    $sql="INSERT INTO igrac(email,ime,sifra,avatarId) VALUES(:mejl,:ime,:sifra,:avatar)";  
     $stmt=$dbh->prepare($sql);
     $stmt->bindParam(":mejl", $this->mejl, PDO::PARAM_STR,320);
     $stmt->bindParam(":ime", $this->ime, PDO::PARAM_STR,20);
-    $stmt->bindParam(":sifra", $this->sifra, PDO::PARAM_STR,50);
+    $stmt->bindParam(":sifra", $hashedPassword, PDO::PARAM_STR,50);
+    $hashedPassword=password_hash($this->sifra, PASSWORD_DEFAULT);
     $stmt->bindParam(":avatar", $this->nasumicanAvatar());
     if($stmt->execute()){
         header("location: ../includes/regSucces.inc.php");

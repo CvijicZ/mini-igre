@@ -26,13 +26,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Pocetna</a>
+          <a class="nav-link active" aria-current="page" href="../index.php">Pocetna</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="forum.php">Forum</a>
+          <a class="nav-link" href="../forum/sveTeme.php">Forum</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/mini-igre/classes/logout.php">Odjavi se</a>
+          <a class="nav-link" href="../classes/logout.php">Odjavi se</a>
         </li>
       </ul>
     </div>

@@ -25,34 +25,31 @@
             <a class="nav-link" href="#">Prijavi bug</a>
           </div>
         </div>      
-    </nav>
-    
+    </nav> 
     <div class="container mt-5">
-
   <div class="d-flex justify-content-center row">
     <div class="col-md-8">
       <div class="bg-white p-2">
         <div class="d-flex flex-row user-info">
           <?php include "./prikaziTemuIspis.php"; getUserInfo(); ?>
       </div>
+     <?php if(isset($_SESSION['id'])){ ?>
       <div class="bg-white">
-        <div class="d-flex flex-row fs-12">
-          <div class="like p-2 cursor">
-           <button><i class="fa-regular fa-thumbs-up"></i>  <span class="ml-1">Like</span></button> 
-          </div>
-
-          <div class="like p-2 cursor">
-         
-          <button type="button" id="komentar"><i class="fa-regular fa-comment"></i>  <span class="ml-1">Komentarisi</span></button>
-          </div>
-          <div class="like p-2 cursor">   
-           <button type="button" id="podeli"><i class="fa-regular fa-share"></i> <span class="ml-1">Podeli</span></button> 
-          </div>
+      <div class="d-flex flex-row fs-12">
+        <div class="like p-2 cursor">
+         <button><i class="fa-regular fa-thumbs-up"></i>  <span class="ml-1">Like</span></button> 
+        </div>
+        <div class="like p-2 cursor">      
+        <button type="button" id="komentar"><i class="fa-regular fa-comment"></i>  <span class="ml-1">Komentarisi</span></button>
+        </div>
+        <div class="like p-2 cursor">   
+         <button type="button" id="podeli"><i class="fa-regular fa-share"></i> <span class="ml-1">Podeli</span></button> 
         </div>
       </div>
+    </div>
+    <?php } ?> 
       <div class="bg-light p-2" id="noviKomentar">
         <div class="d-flex flex-row align-items-start">
-          <!-- <img src="../img/kviz.webp" alt="" class="rounded-circle" width="40"> -->
           <textarea class="form-control ml-1 shadow-none textarea" id="sadrzajKomentara"></textarea>
           <div class="error"></div>
         </div>
@@ -89,10 +86,6 @@
   });   
       }
       ucitajKomentare();
-      
-      
-
-
    $('#noviKomentarBtn').click(function() {
       var comment = $('#sadrzajKomentara').val();
       var queryString = window.location.search;
@@ -111,8 +104,6 @@
       });
    });
 });
-  
-    // $("#noviKomentar").hide();
     $("#komentar").click(function(){
       $("#noviKomentar").show();
     });

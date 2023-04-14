@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
         exit();
     }
     $sif=$stmt->fetchAll(PDO::FETCH_ASSOC);
-    if($sifra!==$sif[0]['sifra']){
+    if(!password_verify($sifra, $sif[0]['sifra'])){
         header("location: ../prijava.php?error=PogresnaSifra");
         $stmt=null;
         exit();

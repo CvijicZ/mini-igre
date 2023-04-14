@@ -194,6 +194,11 @@ header{
     font-size: 2em;
     
 }
+#live_data tbody, td, tfoot, th, thead, tr{
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
 .containerPrikazTeme{
     display: flex;
     justify-content: left;

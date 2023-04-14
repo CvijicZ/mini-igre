@@ -14,7 +14,7 @@ const isValidEmail=mejl=>{
     return rgx.test(String(mejl).toLowerCase());
 }
 const isValidPassword=sifra=>{
-    const rgx=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    const rgx=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w\W]{8,}$/;
     return rgx.test(String(sifra));
 }
 const isValidName=ime=>{
@@ -192,7 +192,6 @@ const proveriRegistraciju = () => {
     const mejlV= mejl.value.trim();
     const sifraV= sifra.value.trim();
     const sifra2V= sifra2.value.trim();
-
     if(imeV === '')
     {
         setError(ime,"Korisnicko ime je obavezno!");
@@ -202,12 +201,14 @@ const proveriRegistraciju = () => {
         setError(ime,'Ime moze da sadrzi samo slova i brojeve!');
         return false;
     }
+    else if(imeV.length>20){
+        setError(ime,"Ime ne moze biti duze od 20 karaktera!");
+        return false;
+    }
     else
     {
         setSucces(ime);
     }
-
-
     if(mejlV==='')
     {
         setError(mejl,'E-mail je obavezan!');
@@ -216,6 +217,10 @@ const proveriRegistraciju = () => {
     else if(!isValidEmail(mejlV))
     {
         setError(mejl,"Neispravan e-mail");
+        return false;
+    }
+    else if(mejlV.length>254){
+        setError(mejl,"Maksimalna duzina e-mail adrese je 254!");
         return false;
     }
     else 
@@ -230,6 +235,10 @@ const proveriRegistraciju = () => {
     }
     else if(!isValidPassword(sifraV)){
         setError(sifra,'Sifra mora da sadrzi 8 karaktera minimalno, veliko, malo slovo i broj!');
+        return false;
+    }
+    else if(sifraV.length>50){
+        setError(sifra,"Sifra ne moze biti duza od 50 karaktera!");
         return false;
     }
     else

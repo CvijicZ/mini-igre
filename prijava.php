@@ -10,7 +10,7 @@
 </head>
 <body class="bodyReg" onload="ScrollToTarget(); proveriKorisnika();">
 
-<?php include"includes/header.inc.php";?>
+<?php include "includes/header.inc.php";?>
 
     <section class="vh-100 bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
@@ -23,7 +23,6 @@
               <h2 class="text-uppercase text-center mb-5">Prijava </h2>
 
               <form action="classes/login.php" method="post" id="form" onsubmit="return proveriPrijavu()">
-
                 <div class="form-outline mb-4">
                   <div class="input-control">
                   <label class="form-label" for="ime">Ime ili e-mail</label>
@@ -46,9 +45,7 @@
 
                 <p class="text-center text-muted mt-5 mb-0">Nemaš nalog? <a href="register.php"
                     class="fw-bold text-body"><u>Registruj se</u></a></p>
-
               </form>
-
             </div>
           </div>
         </div>
@@ -56,17 +53,11 @@
     </div>
   </div>
 </section>
-
-    
-
 <script src="script/registerValidation.js"></script>
 <script>function ScrollToTarget()
     {
-         document.getElementById("form").scrollIntoView(true);
-         
+         document.getElementById("form").scrollIntoView(true);        
     }</script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
 </body>
 </html>
