@@ -15,7 +15,6 @@
 
     <?php include"includes/header.inc.php";?>
     <?php if(isset($_SESSION['id'])){?>
-
         <div class="row igre">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -27,7 +26,7 @@
         <div class="card " style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Zmija</h5>
-                <a href="./igre/zmija/index.html"><img class="card-img-top" src="img/kviz.webp" alt="Card image cap" width="200px"
+                <a href="./igre/zmija/index.php"><img class="card-img-top" src="img/zmijaA.png" alt="Card image cap" width="200px"
                         height="200px"></a>
             </div>
         </div>

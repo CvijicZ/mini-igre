@@ -11,7 +11,7 @@
     <div class="wrapper">
         <div class="game-details">
             <span class="score">Rezultat: 0</span>
-            <span class="high-score">Gihg-score:12</span>
+            <span class="high-score">Najbolji rezultat: <?php include "playerTopScore.php" ?></span>
         </div>
         <div class="play-board"></div>
     </div>
