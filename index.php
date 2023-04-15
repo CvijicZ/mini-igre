@@ -26,8 +26,8 @@
         </div>
         <div class="card " style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Geografija Kviz</h5>
-                <a href="#"><img class="card-img-top" src="img/kviz.webp" alt="Card image cap" width="200px"
+                <h5 class="card-title">Zmija</h5>
+                <a href="./igre/zmija/index.html"><img class="card-img-top" src="img/kviz.webp" alt="Card image cap" width="200px"
                         height="200px"></a>
             </div>
         </div>

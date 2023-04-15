@@ -71,7 +71,6 @@ class ProveriKorisnika{
         $stmt=$dbh->prepare($sql);
         $stmt->bindParam(":ime", $this->ime, PDO::PARAM_STR,20);
         $stmt->execute();
-
         if($stmt->rowCount()>0){
             return false;      
             exit();
@@ -87,7 +86,6 @@ class ProveriKorisnika{
         $stmt=$dbh->prepare($sql);
         $stmt->bindParam(":email", $this->mejl, PDO::PARAM_STR,320);
         $stmt->execute();
-
         if($stmt->rowCount()>0){
             return false;      
             exit();
@@ -97,10 +95,8 @@ class ProveriKorisnika{
             $stmt=null;
         }
      }
-
 }
 class RegistrujKorisnika extends ProveriKorisnika{  
-
     protected function nasumicanAvatar(){
         include "dbh.php";
         $sql="SELECT id FROM avatar ORDER BY RAND() LIMIT 1";
@@ -110,9 +106,7 @@ class RegistrujKorisnika extends ProveriKorisnika{
         $stmt->closeCursor();
         return $result;
     }
-
-    public function RegistracijaKorisnika(){
-        
+    public function RegistracijaKorisnika(){       
     if($this->PraznoPolje()==false)
     {
         header("location: ../register.php?error=PraznoPolje");
@@ -148,20 +142,19 @@ class RegistrujKorisnika extends ProveriKorisnika{
     include "dbh.php";
     $sql="INSERT INTO igrac(email,ime,sifra,avatarId) VALUES(:mejl,:ime,:sifra,:avatar)";  
     $stmt=$dbh->prepare($sql);
-    $stmt->bindParam(":mejl", $this->mejl, PDO::PARAM_STR,320);
+    $stmt->bindParam(":mejl", $this->mejl, PDO::PARAM_STR,254);
     $stmt->bindParam(":ime", $this->ime, PDO::PARAM_STR,20);
     $stmt->bindParam(":sifra", $hashedPassword, PDO::PARAM_STR,50);
-    $hashedPassword=password_hash($this->sifra, PASSWORD_DEFAULT);
-    $stmt->bindParam(":avatar", $this->nasumicanAvatar());
+    $hashedPassword=password_hash($this->sifra, PASSWORD_DEFAULT); 
+    $stmt->bindParam(":avatar", $this->nasumicanAvatar(), PDO::PARAM_INT,3);
+    
     if($stmt->execute()){
         header("location: ../includes/regSucces.inc.php");
-        exit();
-        
+        exit();   
     }
     else {
         echo "Neuspesan query";
     }
- 
 }
 }
 $korisnik= new RegistrujKorisnika($mejl,$ime,$sifra,$sifra2);
