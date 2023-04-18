@@ -1,6 +1,7 @@
 
 const playBoard=document.querySelector(".play-board");
 const scoreEl=document.querySelector(".score");
+const controls=document.querySelectorAll(".controls i");
 let gameOver=false;
 let foodX, foodY;
 let snakeX=5,snakeY=10;
@@ -37,6 +38,9 @@ const changeDirection=(e)=>{
     }
     initGame();
 }
+controls.forEach(key => {
+    key.addEventListener("click", ( )=> changeDirection({key:key.dataset.key}));
+});
 const initGame=()=>{
     if(gameOver===true){
         return handleGameOver();

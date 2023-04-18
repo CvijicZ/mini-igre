@@ -11,9 +11,7 @@
     <title>Pocetna</title>
 </head>
 <body class="indexBody">
-   
-
-    <?php include"includes/header.inc.php";?>
+    <?php include "includes/header.inc.php";?>
     <?php if(isset($_SESSION['id'])){?>
         <div class="row igre">
         <div class="card" style="width: 18rem;">
@@ -59,20 +57,12 @@
             </div>
         </div>
     </div>
-   
-    
-
-    <?php } else { echo "<h3 class='text-center'>Morate biti prijavljeni da biste igrali igre</h3>";} ?>
-   
+    <?php } else { echo "<h3 class='text-center'>Morate biti prijavljeni da biste igrali igre</h3>";} ?> 
     <div>
      <div class="wave"></div>
      <div class="wave"></div>
      <div class="wave"></div>
   </div>
-
-  
-   
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
