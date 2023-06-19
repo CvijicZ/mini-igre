@@ -1,3 +1,5 @@
+Live version: https://mini-igre.000webhostapp.com/
+
 There are 2 users, one is me from my laptop, second is also me from my PC, i really don' know why my PC name is 'wspaliah :) '
 This is a project I started for fun and for learning new skills.
 Project is unfinished and probably have a lot of bugs.
